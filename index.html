@@ -790,6 +790,27 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+  <script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDa...",
+  authDomain: "sporcukayit.firebaseapp.com",
+  projectId: "sporcukayit",
+  storageBucket: "sporcukayit.firebasestorage.app",
+  messagingSenderId: "484067557749",
+  appId: "1:484067557749:web:f73906702d58e8e79b133c"
+};
+
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+console.log("Firebase Firestore bağlandı");
+
+</script>
 </body>
 </html>
+
 
