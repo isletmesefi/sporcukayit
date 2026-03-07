@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Spor Branş Kayıt Sistemi</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -32,11 +32,21 @@
   }
   .nav-logo { display:flex; align-items:center; gap:10px; font-weight:800; font-size:1.1rem; letter-spacing:-0.5px; }
   .nav-logo span { color:var(--accent); }
-  .nav-logo .icon { width:36px; height:36px; background:var(--accent); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .nav-logo .icon {
+    width:36px; height:36px; background:var(--accent); border-radius:10px;
+    display:flex; align-items:center; justify-content:center; font-size:18px;
+  }
   .nav-tabs { display:flex; gap:4px; background:var(--surface); border-radius:12px; padding:4px; }
-  .nav-tab { padding:8px 20px; border-radius:9px; font-size:0.85rem; font-weight:600; cursor:pointer; border:none; background:transparent; color:var(--muted); transition:all 0.2s; }
+  .nav-tab {
+    padding:8px 20px; border-radius:9px; font-size:0.85rem; font-weight:600;
+    cursor:pointer; border:none; background:transparent; color:var(--muted); transition:all 0.2s;
+  }
   .nav-tab.active,.nav-tab:hover { background:var(--accent); color:#000; }
-  .btn { padding:14px 28px; border-radius:12px; font-size:0.95rem; font-weight:700; cursor:pointer; border:none; transition:all 0.2s; font-family:'Sora',sans-serif; display:inline-flex; align-items:center; gap:8px; }
+  .btn {
+    padding:14px 28px; border-radius:12px; font-size:0.95rem; font-weight:700;
+    cursor:pointer; border:none; transition:all 0.2s; font-family:'Sora',sans-serif;
+    display:inline-flex; align-items:center; gap:8px;
+  }
   .btn-primary { background:var(--accent); color:#000; }
   .btn-primary:hover { background:#00f0c0; transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,212,170,0.35); }
   .btn-outline { background:transparent; color:var(--text); border:1px solid var(--border); }
@@ -47,7 +57,12 @@
 
   #home { align-items:center; justify-content:center; background:radial-gradient(ellipse 80% 60% at 50% 20%, rgba(0,212,170,0.12) 0%, transparent 60%), var(--bg); }
   .hero { text-align:center; max-width:720px; padding:60px 24px; }
-  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(0,212,170,0.12); border:1px solid rgba(0,212,170,0.3); color:var(--accent); padding:6px 16px; border-radius:100px; font-size:0.78rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-bottom:28px; }
+  .hero-badge {
+    display:inline-flex; align-items:center; gap:8px; background:rgba(0,212,170,0.12);
+    border:1px solid rgba(0,212,170,0.3); color:var(--accent); padding:6px 16px;
+    border-radius:100px; font-size:0.78rem; font-weight:600; letter-spacing:1px;
+    text-transform:uppercase; margin-bottom:28px;
+  }
   .hero h1 { font-size:clamp(2rem,5vw,3.2rem); font-weight:800; line-height:1.15; letter-spacing:-1.5px; margin-bottom:20px; }
   .hero h1 em { color:var(--accent); font-style:normal; }
   .hero p { color:var(--muted); font-size:1.05rem; line-height:1.7; margin-bottom:40px; }
@@ -63,7 +78,11 @@
   .form-row.triple { grid-template-columns:1fr 1fr 1fr; }
   .form-group { display:flex; flex-direction:column; gap:6px; }
   label { font-size:0.8rem; font-weight:600; color:var(--muted); }
-  input,select,textarea { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:11px 14px; color:var(--text); font-family:'Sora',sans-serif; font-size:0.9rem; transition:border 0.2s; width:100%; }
+  input,select,textarea {
+    background:var(--surface2); border:1px solid var(--border); border-radius:10px;
+    padding:11px 14px; color:var(--text); font-family:'Sora',sans-serif; font-size:0.9rem;
+    transition:border 0.2s; width:100%;
+  }
   input[type="file"] { padding:10px; }
   input:focus,select:focus,textarea:focus { outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(0,212,170,0.1); }
   select option { background:var(--surface2); }
@@ -72,21 +91,35 @@
 
   .select-wrap { position:relative; }
   .select-wrap select { padding-right:52px; appearance:none; -webkit-appearance:none; }
-  .select-unit { position:absolute; right:14px; top:50%; transform:translateY(-50%); font-size:0.72rem; font-weight:700; color:var(--accent); pointer-events:none; font-family:'Space Mono',monospace; letter-spacing:0.5px; }
+  .select-unit {
+    position:absolute; right:14px; top:50%; transform:translateY(-50%);
+    font-size:0.72rem; font-weight:700; color:var(--accent); pointer-events:none;
+    font-family:'Space Mono',monospace; letter-spacing:0.5px;
+  }
 
-  .photo-upload { border:2px dashed var(--border); border-radius:14px; padding:32px; text-align:center; cursor:pointer; transition:all 0.2s; position:relative; overflow:hidden; }
+  .photo-upload {
+    border:2px dashed var(--border); border-radius:14px; padding:32px; text-align:center;
+    cursor:pointer; transition:all 0.2s; display:block;
+  }
   .photo-upload:hover { border-color:var(--accent); background:rgba(0,212,170,0.04); }
-  .photo-upload input { position:absolute; inset:0; opacity:0; cursor:pointer; width:100%; height:100%; }
+  .photo-upload input { display:none; }
   .photo-upload .upload-icon { font-size:2rem; margin-bottom:8px; }
   .photo-upload p { color:var(--muted); font-size:0.85rem; }
-  #photo-preview { width:90px; height:90px; border-radius:50%; object-fit:cover; margin:0 auto 12px; border:3px solid var(--accent); display:none; }
+  #photo-preview {
+    width:90px; height:90px; border-radius:50%; object-fit:cover;
+    margin:0 auto 12px; border:3px solid var(--accent); display:none;
+  }
 
   .file-card { background:var(--surface2); border:1px solid var(--border); border-radius:12px; padding:14px; }
   .file-status { color:var(--muted); font-size:0.78rem; margin-top:6px; word-break:break-word; }
   .file-link { color:var(--accent); text-decoration:none; font-size:0.84rem; }
 
   .radio-group { display:flex; gap:12px; flex-wrap:wrap; }
-  .radio-option { display:flex; align-items:center; gap:8px; background:var(--surface2); border:1px solid var(--border); border-radius:9px; padding:9px 14px; cursor:pointer; font-size:0.88rem; font-weight:500; transition:all 0.2s; }
+  .radio-option {
+    display:flex; align-items:center; gap:8px; background:var(--surface2);
+    border:1px solid var(--border); border-radius:9px; padding:9px 14px;
+    cursor:pointer; font-size:0.88rem; font-weight:500; transition:all 0.2s;
+  }
   .radio-option input { width:auto; }
   .radio-option:has(input:checked) { border-color:var(--accent); background:rgba(0,212,170,0.1); color:var(--accent); }
 
@@ -104,15 +137,25 @@
   .stat-label { font-size:0.78rem; color:var(--muted); margin-top:4px; }
 
   .cards-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(268px,1fr)); gap:20px; }
-  .student-card { background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:24px; cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden; }
+  .student-card {
+    background:var(--surface); border:1px solid var(--border); border-radius:18px; padding:24px;
+    cursor:pointer; transition:all 0.25s; position:relative; overflow:hidden;
+  }
   .student-card::before { content:''; position:absolute; inset:0; background:radial-gradient(circle at top right,rgba(0,212,170,0.06),transparent 60%); pointer-events:none; }
   .student-card:hover { transform:translateY(-4px); border-color:rgba(0,212,170,0.35); box-shadow:var(--card-glow),0 20px 40px rgba(0,0,0,0.3); }
   .card-top { display:flex; gap:16px; align-items:flex-start; margin-bottom:16px; }
   .card-avatar { width:62px; height:62px; border-radius:14px; object-fit:cover; border:2.5px solid var(--accent); flex-shrink:0; }
-  .card-avatar-fb { width:62px; height:62px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#006655); display:flex; align-items:center; justify-content:center; font-size:1.4rem; font-weight:700; color:#000; flex-shrink:0; }
+  .card-avatar-fb {
+    width:62px; height:62px; border-radius:14px; background:linear-gradient(135deg,var(--accent),#006655);
+    display:flex; align-items:center; justify-content:center; font-size:1.4rem; font-weight:700; color:#000; flex-shrink:0;
+  }
   .card-info h3 { font-size:1rem; font-weight:700; line-height:1.3; margin-bottom:4px; }
   .card-age { font-size:0.78rem; color:var(--muted); }
-  .card-badge { display:inline-flex; padding:3px 10px; border-radius:100px; font-size:0.7rem; font-weight:700; margin-top:6px; margin-right:4px; background:rgba(0,212,170,0.12); color:var(--accent); border:1px solid rgba(0,212,170,0.2); }
+  .card-badge {
+    display:inline-flex; padding:3px 10px; border-radius:100px; font-size:0.7rem; font-weight:700;
+    margin-top:6px; margin-right:4px; background:rgba(0,212,170,0.12); color:var(--accent);
+    border:1px solid rgba(0,212,170,0.2);
+  }
   .card-badge.red { background:rgba(255,107,53,0.12); color:var(--accent2); border-color:rgba(255,107,53,0.2); }
   .card-divider { height:1px; background:var(--border); margin:14px 0; }
   .card-meta { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
@@ -123,23 +166,43 @@
   .login-box { background:var(--surface); border:1px solid var(--border); border-radius:24px; padding:48px 40px; width:100%; max-width:400px; margin:24px; }
   .login-box h2 { font-size:1.6rem; font-weight:800; margin-bottom:6px; }
   .login-box p { color:var(--muted); font-size:0.88rem; margin-bottom:32px; }
-  .login-error { background:rgba(255,68,68,0.12); border:1px solid rgba(255,68,68,0.3); border-radius:10px; padding:10px 14px; color:#ff6b6b; font-size:0.85rem; margin-bottom:16px; display:none; }
+  .login-error {
+    background:rgba(255,68,68,0.12); border:1px solid rgba(255,68,68,0.3); border-radius:10px;
+    padding:10px 14px; color:#ff6b6b; font-size:0.85rem; margin-bottom:16px; display:none;
+  }
 
-  .modal-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px); z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px; opacity:0; pointer-events:none; transition:opacity 0.2s; }
+  .modal-overlay {
+    position:fixed; inset:0; background:rgba(0,0,0,0.75); backdrop-filter:blur(8px);
+    z-index:1000; display:flex; align-items:center; justify-content:center; padding:20px;
+    opacity:0; pointer-events:none; transition:opacity 0.2s;
+  }
   .modal-overlay.open { opacity:1; pointer-events:all; }
-  .modal { background:var(--surface); border:1px solid var(--border); border-radius:24px; width:100%; max-width:760px; max-height:90vh; overflow-y:auto; transform:scale(0.95); transition:transform 0.2s; }
+  .modal {
+    background:var(--surface); border:1px solid var(--border); border-radius:24px;
+    width:100%; max-width:760px; max-height:90vh; overflow-y:auto; transform:scale(0.95); transition:transform 0.2s;
+  }
   .modal-overlay.open .modal { transform:scale(1); }
   .modal-header { display:flex; align-items:flex-start; justify-content:space-between; padding:28px 28px 0; margin-bottom:20px; }
-  .modal-close { width:36px; height:36px; background:var(--surface2); border:none; border-radius:10px; cursor:pointer; color:var(--muted); font-size:1.1rem; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:all 0.2s; }
+  .modal-close {
+    width:36px; height:36px; background:var(--surface2); border:none; border-radius:10px;
+    cursor:pointer; color:var(--muted); font-size:1.1rem; display:flex; align-items:center;
+    justify-content:center; flex-shrink:0; transition:all 0.2s;
+  }
   .modal-close:hover { background:rgba(255,68,68,0.2); color:#ff6b6b; }
   .modal-body { padding:0 28px 28px; }
   .detail-hero { display:flex; gap:20px; align-items:center; margin-bottom:24px; }
   .detail-avatar { width:96px; height:96px; border-radius:20px; object-fit:cover; border:3px solid var(--accent); flex-shrink:0; }
-  .detail-avatar-fb { width:96px; height:96px; border-radius:20px; background:linear-gradient(135deg,var(--accent),#006655); display:flex; align-items:center; justify-content:center; font-size:2.2rem; font-weight:700; color:#000; flex-shrink:0; }
+  .detail-avatar-fb {
+    width:96px; height:96px; border-radius:20px; background:linear-gradient(135deg,var(--accent),#006655);
+    display:flex; align-items:center; justify-content:center; font-size:2.2rem; font-weight:700; color:#000; flex-shrink:0;
+  }
   .detail-name h2 { font-size:1.5rem; font-weight:800; letter-spacing:-0.5px; }
   .detail-name p { color:var(--muted); font-size:0.88rem; margin-top:4px; }
   .detail-name .badges { display:flex; gap:8px; flex-wrap:wrap; margin-top:10px; }
-  .modal-sec { font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin:20px 0 10px; padding-bottom:8px; border-bottom:1px solid var(--border); }
+  .modal-sec {
+    font-size:0.7rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase;
+    color:var(--accent); margin:20px 0 10px; padding-bottom:8px; border-bottom:1px solid var(--border);
+  }
   .detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:4px; }
   .detail-field { background:var(--surface2); border-radius:12px; padding:14px 16px; }
   .detail-field label { font-size:0.7rem; color:var(--muted); font-weight:600; text-transform:uppercase; letter-spacing:0.8px; display:block; margin-bottom:4px; }
@@ -149,12 +212,20 @@
   .detail-field.warn span { color:var(--accent2); }
   .modal-footer { display:flex; gap:10px; flex-wrap:wrap; padding:20px 28px; border-top:1px solid var(--border); background:rgba(0,0,0,0.2); }
 
-  .success-banner { background:rgba(0,212,170,0.1); border:1px solid rgba(0,212,170,0.3); border-radius:14px; padding:20px 24px; display:none; gap:14px; align-items:flex-start; margin-bottom:24px; }
+  .success-banner {
+    background:rgba(0,212,170,0.1); border:1px solid rgba(0,212,170,0.3); border-radius:14px;
+    padding:20px 24px; display:none; gap:14px; align-items:flex-start; margin-bottom:24px;
+  }
   .success-banner.show { display:flex; }
   .empty-state { text-align:center; padding:80px 24px; color:var(--muted); grid-column:1/-1; }
   .empty-state .eicon { font-size:3rem; margin-bottom:16px; opacity:0.4; }
   .empty-state h3 { font-size:1.1rem; margin-bottom:8px; color:var(--text); }
-  .toast { position:fixed; bottom:24px; right:24px; z-index:9999; background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:14px 20px; box-shadow:0 8px 32px rgba(0,0,0,0.4); transform:translateY(80px); opacity:0; transition:all 0.3s; pointer-events:none; display:flex; align-items:center; gap:10px; max-width:360px; }
+  .toast {
+    position:fixed; bottom:24px; right:24px; z-index:9999; background:var(--surface);
+    border:1px solid var(--border); border-radius:12px; padding:14px 20px; box-shadow:0 8px 32px rgba(0,0,0,0.4);
+    transform:translateY(80px); opacity:0; transition:all 0.3s; pointer-events:none;
+    display:flex; align-items:center; gap:10px; max-width:360px;
+  }
   .toast.show { transform:translateY(0); opacity:1; }
 
   @media(max-width:700px) {
@@ -198,11 +269,16 @@
       <button class="nav-tab" onclick="goAdmin()">Yönetici</button>
     </div>
   </nav>
+
   <div class="form-container">
     <div class="success-banner" id="success-banner">
       <div style="font-size:1.5rem">✅</div>
-      <div><strong id="success-title">Kayıt Başarıyla Tamamlandı!</strong><div style="color:var(--muted);font-size:0.85rem;margin-top:4px" id="success-subtitle">Öğrenci bilgileri sisteme eklendi.</div></div>
+      <div>
+        <strong id="success-title">Kayıt Başarıyla Tamamlandı!</strong>
+        <div style="color:var(--muted);font-size:0.85rem;margin-top:4px" id="success-subtitle">Öğrenci bilgileri sisteme eklendi.</div>
+      </div>
     </div>
+
     <div class="form-header">
       <h2 id="form-main-title">Öğrenci Kayıt Formu</h2>
       <p id="form-main-subtitle">Lütfen tüm alanları eksiksiz doldurunuz.</p>
@@ -210,15 +286,15 @@
 
     <div class="form-section">
       <div class="form-section-title">📷 Sporcu Fotoğrafı</div>
-      <div class="photo-upload" onclick="document.getElementById('photo-input').click()">
-        <input type="file" id="photo-input" accept="image/*" onchange="handlePhoto(event)">
-        <img id="photo-preview">
+      <label for="photo-input" class="photo-upload">
+        <input type="file" id="photo-input" accept="image/*">
+        <img id="photo-preview" alt="">
         <div id="photo-placeholder">
           <div class="upload-icon">📸</div>
           <p>Fotoğraf yüklemek için tıklayın</p>
           <p style="font-size:0.75rem;margin-top:4px;color:#444">JPG, PNG — Önerilen maksimum 2 MB</p>
         </div>
-      </div>
+      </label>
       <div class="hint" id="photo-current-link"></div>
     </div>
 
@@ -228,6 +304,7 @@
         <div class="form-group"><label>Ad</label><input type="text" id="f-firstname" placeholder=""></div>
         <div class="form-group"><label>Soyad</label><input type="text" id="f-lastname" placeholder=""></div>
       </div>
+
       <div class="form-row" style="margin-top:12px">
         <div class="form-group">
           <label>Kategori</label>
@@ -243,12 +320,16 @@
         </div>
         <div class="form-group"><label>Doğum Yeri</label><input type="text" id="f-birthplace" placeholder=""></div>
       </div>
+
       <div style="margin-top:14px">
         <div class="form-section-title" style="font-size:0.72rem;margin-bottom:12px">📅 Doğum Tarihi</div>
         <div class="form-row triple">
           <div class="form-group">
             <label>Gün</label>
-            <select id="f-day"><option value="">Gün</option><script>for(let i=1;i<=31;i++) document.write(`<option>${i}</option>`)</script></select>
+            <select id="f-day">
+              <option value="">Gün</option>
+              <script>for(let i=1;i<=31;i++) document.write(`<option>${i}</option>`)</script>
+            </select>
           </div>
           <div class="form-group">
             <label>Ay</label>
@@ -262,10 +343,14 @@
           </div>
           <div class="form-group">
             <label>Yıl</label>
-            <select id="f-year"><option value="">Yıl</option><script>for(let i=2026;i>=2000;i--) document.write(`<option>${i}</option>`)</script></select>
+            <select id="f-year">
+              <option value="">Yıl</option>
+              <script>for(let i=2026;i>=2000;i--) document.write(`<option>${i}</option>`)</script>
+            </select>
           </div>
         </div>
       </div>
+
       <div class="form-row" style="margin-top:12px">
         <div class="form-group">
           <label>Kan Grubu</label>
@@ -326,6 +411,7 @@
         <label>İlaç Detayı</label>
         <input type="text" id="f-medication-detail" placeholder="">
       </div>
+
       <div class="form-group" style="margin-bottom:14px">
         <label>Alerjisi Var Mı?</label>
         <div class="radio-group">
@@ -492,7 +578,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const storage = getStorage(app);
+const storage = getStorage(app, "gs://sporcukayit.firebasestorage.app");
 
 const MONTHS = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 const SEEDS = ['sporcu_emre_k','sporcu_zeynep_a','sporcu_mert_d','sporcu_elif_s','sporcu_burak_y','sporcu_selin_c'];
@@ -520,6 +606,11 @@ fileInputs.forEach(item => {
     const file = e.target.files[0];
     document.getElementById(item.status).textContent = file ? `Seçilen dosya: ${file.name}` : 'Henüz dosya seçilmedi.';
   });
+});
+
+document.getElementById('photo-input').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  handlePhotoFile(file);
 });
 
 async function loadStudents() {
@@ -550,7 +641,9 @@ function showScreen(id) {
   window.scrollTo(0,0);
 }
 
-function goAdmin() { showScreen('login-screen'); }
+function goAdmin() {
+  showScreen('login-screen');
+}
 
 async function checkLogin() {
   if (document.getElementById('admin-pass').value === 'giresun2828') {
@@ -579,28 +672,44 @@ function toggleConditionalFields() {
 document.querySelectorAll('input[name="medication"]').forEach(r => r.addEventListener('change', toggleConditionalFields));
 document.querySelectorAll('input[name="allergy"]').forEach(r => r.addEventListener('change', toggleConditionalFields));
 
-function handlePhoto(e) {
-  const file = e.target.files[0];
+function handlePhotoFile(file) {
   if (!file) return;
+
+  if (!file.type.startsWith('image/')) {
+    showToast('⚠️ Lütfen geçerli bir fotoğraf seçin.');
+    return;
+  }
+
   const reader = new FileReader();
-  reader.onload = ev => {
+  reader.onload = function(ev) {
     photoPreviewData = ev.target.result;
-    const p = document.getElementById('photo-preview');
-    p.src = photoPreviewData;
-    p.style.display = 'block';
-    document.getElementById('photo-placeholder').style.display = 'none';
+    const preview = document.getElementById('photo-preview');
+    const placeholder = document.getElementById('photo-placeholder');
+    preview.src = photoPreviewData;
+    preview.style.display = 'block';
+    placeholder.style.display = 'none';
   };
   reader.readAsDataURL(file);
 }
 
-async function uploadFileIfNeeded(inputId, folder, fallbackUrl='') {
+async function uploadFileIfNeeded(inputId, folder, fallbackUrl = '') {
   const input = document.getElementById(inputId);
-  const file = input.files[0];
+  if (!input) return fallbackUrl || '';
+
+  const file = input.files && input.files[0];
   if (!file) return fallbackUrl || '';
+
   const safeName = `${Date.now()}_${file.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
-  const fileRef = ref(storage, `${folder}/${safeName}`);
-  await uploadBytes(fileRef, file);
-  return await getDownloadURL(fileRef);
+  const fullPath = `${folder}/${safeName}`;
+
+  try {
+    const fileRef = ref(storage, fullPath);
+    await uploadBytes(fileRef, file);
+    return await getDownloadURL(fileRef);
+  } catch (error) {
+    console.error(`Yükleme hatası (${inputId})`, error);
+    throw new Error(`${inputId} yüklenemedi: ${error.code || error.message}`);
+  }
 }
 
 function getStudentPayloadBase() {
@@ -681,7 +790,7 @@ async function submitForm() {
     showScreen('form-screen');
   } catch (error) {
     console.error(error);
-    showToast('❌ İşlem sırasında hata oluştu. Önce Storage ve kurallarını kontrol edin.');
+    showToast(`❌ ${error.message || 'Dosya yükleme hatası oluştu.'}`);
   }
 }
 
@@ -1133,7 +1242,6 @@ function showToast(msg) {
 window.showScreen = showScreen;
 window.goAdmin = goAdmin;
 window.checkLogin = checkLogin;
-window.handlePhoto = handlePhoto;
 window.submitForm = submitForm;
 window.filterStudents = filterStudents;
 window.openModal = openModal;
