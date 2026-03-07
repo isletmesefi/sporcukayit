@@ -555,7 +555,7 @@ function showScreen(id) {
 function goAdmin() { showScreen('login-screen'); }
 
 async function checkLogin() {
-  if (document.getElementById('admin-pass').value === 'admin123') {
+  if (document.getElementById('admin-pass').value === 'giresun2828') {
     document.getElementById('login-error').style.display = 'none';
     document.getElementById('admin-pass').value = '';
     await loadStudents();
@@ -836,7 +836,7 @@ function renderCards(list) {
       <div class="card-top">
         ${avatarCard(s)}
         <div class="card-info">
-          <h3>${s.firstName} ${s.lastName}</h3>
+          <h3>..... .....</h3>
           <div class="card-age">${calcAge(s.birthYear,s.birthMonth,s.birthDay)}</div>
           <div style="margin-top:6px">${badges}</div>
         </div>
@@ -845,7 +845,7 @@ function renderCards(list) {
       <div class="card-meta">
         <div class="card-meta-item"><label>Okul</label><span>${s.school||'—'}</span></div>
         <div class="card-meta-item"><label>Sınıf</label><span>${s.classroom||'—'}</span></div>
-        <div class="card-meta-item"><label>1. Veli</label><span>${s.parent1||'—'}</span></div>
+        <div class="card-meta-item"><label>Memleket</label><span>.....</span></div>
         <div class="card-meta-item"><label>Kayıt</label><span>${s.registeredAt||'—'}</span></div>
       </div>
     </div>`;
