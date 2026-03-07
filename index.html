@@ -769,5 +769,27 @@ function showToast(msg) {
 
 showScreen('home');
 </script>
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDaIBs4XszuDXkHqy42VQVYWc_ZDmtWwms",
+  authDomain: "sporcukayit.firebaseapp.com",
+  projectId: "sporcukayit",
+  storageBucket: "sporcukayit.firebasestorage.app",
+  messagingSenderId: "484067557749",
+  appId: "1:484067557749:web:f73906702d58e8e79b133c",
+  measurementId: "G-1CPBNSY38B"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 </body>
 </html>
+
