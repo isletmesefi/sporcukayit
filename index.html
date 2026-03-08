@@ -365,6 +365,14 @@
 
         <div class="form-row" style="margin-top:12px">
           <div class="form-group">
+            <label>TC Kimlik No</label>
+            <input type="text" id="f-tcno" maxlength="11" inputmode="numeric" placeholder="">
+          </div>
+          <div class="form-group"></div>
+        </div>
+
+        <div class="form-row" style="margin-top:12px">
+          <div class="form-group">
             <label>Cinsiyet</label>
             <div class="radio-group">
               <label class="radio-option"><input type="radio" name="gender" value="Erkek" checked> Erkek</label>
@@ -612,7 +620,7 @@
       <div class="search-bar">
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" placeholder="Ad, veli, okul, kategori, şehir ara..." oninput="filterStudents()">
+          <input type="text" id="search-input" placeholder="Ad, TC, veli, okul, kategori, şehir ara..." oninput="filterStudents()">
         </div>
       </div>
 
@@ -681,6 +689,10 @@
     document.getElementById('photo-input').addEventListener('change', function(e) {
       const file = e.target.files[0];
       handlePhotoFile(file);
+    });
+
+    document.getElementById('f-tcno').addEventListener('input', function (e) {
+      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 11);
     });
 
     function populateSelects() {
@@ -873,6 +885,7 @@
       return {
         firstName: document.getElementById('f-firstname').value.trim(),
         lastName: document.getElementById('f-lastname').value.trim(),
+        tcNo: document.getElementById('f-tcno').value.trim(),
         gender: document.querySelector('input[name="gender"]:checked')?.value || '',
         category: document.getElementById('f-category').value,
         school: document.getElementById('f-school').value.trim(),
@@ -906,10 +919,13 @@
         return;
       }
 
+      if (base.tcNo && !/^\d{11}$/.test(base.tcNo)) {
+        showToast('⚠️ TC Kimlik No 11 haneli olmalıdır.');
+        return;
+      }
+
       try {
         showToast('⏳ Dosyalar yükleniyor...');
-
-        const folderBase = `${base.firstName}_${base.lastName}_${Date.now()}`;
 
         const photoUrl = await uploadFileIfNeeded('photo-input', 'photos', existingFiles.photo);
         const healthReportUrl = await uploadFileIfNeeded('f-health-report', 'documents', existingFiles.healthReportUrl);
@@ -935,7 +951,7 @@
             registeredAt: new Date().toISOString().split('T')[0]
           });
           document.getElementById('success-title').textContent = 'Kayıt Başarıyla Tamamlandı!';
-          document.getElementById('success-subtitle').textContent = 'Sporcu bilgileri ve belgeler sisteme eklendi.';
+          document.getElementById('success-subtitle').textContent = 'Sporcu bilgileri sisteme eklendi.';
           showToast('✅ Yeni kayıt eklendi.');
         }
 
@@ -961,7 +977,7 @@
       existingFiles = { photo:'', healthReportUrl:'', parentPermissionUrl:'', otherDocumentUrl:'' };
 
       [
-        'f-firstname','f-lastname','f-school','f-classroom','f-birthplace',
+        'f-firstname','f-lastname','f-tcno','f-school','f-classroom','f-birthplace',
         'f-medication-detail','f-allergy-detail','f-parent1','f-phone1',
         'f-parent2','f-phone2','f-address','f-notes','f-achievements'
       ].forEach(id => document.getElementById(id).value = '');
@@ -1012,6 +1028,7 @@
 
       document.getElementById('f-firstname').value = student.firstName || '';
       document.getElementById('f-lastname').value = student.lastName || '';
+      document.getElementById('f-tcno').value = student.tcNo || '';
       document.getElementById('f-category').value = student.category || '';
       document.getElementById('f-school').value = student.school || '';
       document.getElementById('f-classroom').value = student.classroom || '';
@@ -1128,8 +1145,8 @@
             </div>
             <div class="card-divider"></div>
             <div class="card-meta">
+              <div class="card-meta-item"><label>TC No</label><span>${s.tcNo || '—'}</span></div>
               <div class="card-meta-item"><label>Okul</label><span>${s.school||'—'}</span></div>
-              <div class="card-meta-item"><label>Sınıf</label><span>${s.classroom||'—'}</span></div>
               <div class="card-meta-item"><label>Memleket</label><span>${s.birthPlace||'—'}</span></div>
               <div class="card-meta-item"><label>Kayıt</label><span>${s.registeredAt||'—'}</span></div>
             </div>
@@ -1143,6 +1160,7 @@
 
       const filtered = students.filter(s =>
         `${s.firstName || ''} ${s.lastName || ''}`.toLowerCase().includes(q) ||
+        (s.tcNo||'').toLowerCase().includes(q) ||
         (s.birthPlace||'').toLowerCase().includes(q) ||
         (s.gender||'').toLowerCase().includes(q) ||
         (s.parent1||'').toLowerCase().includes(q) ||
@@ -1187,6 +1205,7 @@
 
         <div class="modal-sec">Kişisel Bilgiler</div>
         <div class="detail-grid">
+          <div class="detail-field"><label>TC Kimlik No</label><span>${s.tcNo||'—'}</span></div>
           <div class="detail-field"><label>Cinsiyet</label><span>${s.gender||'—'}</span></div>
           <div class="detail-field"><label>Kategori</label><span>${s.category||'—'}</span></div>
           <div class="detail-field"><label>Doğum Tarihi</label><span>${bd}</span></div>
@@ -1283,6 +1302,7 @@
         'Sıra No': i + 1,
         'Ad': s.firstName || '',
         'Soyad': s.lastName || '',
+        'TC Kimlik No': s.tcNo || '',
         'Cinsiyet': s.gender || '',
         'Kategori': s.category || '',
         'Okul': s.school || '',
@@ -1361,6 +1381,7 @@
         <div style="padding:24px 32px">
           ${section('Kişisel Bilgiler')}
           <div style="display:flex;gap:10px;flex-wrap:wrap">
+            ${field('TC Kimlik No', s.tcNo)}
             ${field('Cinsiyet', s.gender)}
             ${field('Kategori', s.category)}
             ${field('Okul', s.school)}
