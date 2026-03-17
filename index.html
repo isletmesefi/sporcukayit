@@ -568,6 +568,7 @@
     </div>
   </div>
 
+  <!-- ===================== LOGIN SCREEN ===================== -->
   <div id="login-screen" class="screen">
     <nav>
       <div class="nav-logo"><div class="icon">⚡</div><span>Spor<span>Kayıt</span></span></div>
@@ -582,27 +583,34 @@
       <div class="login-box">
         <div style="font-size:2rem;margin-bottom:16px">🔐</div>
         <h2>Yönetici Girişi</h2>
-        <p>Panele erişmek için şifrenizi girin.</p>
+        <p>Panele erişmek için e-posta ve şifrenizi girin.</p>
 
-        <div class="login-error" id="login-error">❌ Hatalı şifre. Tekrar deneyin.</div>
+        <div class="login-error" id="login-error">❌ Hatalı e-posta veya şifre. Tekrar deneyin.</div>
+
+        <div class="form-group" style="margin-bottom:12px">
+          <label>E-posta</label>
+          <input type="email" id="admin-email" placeholder="ornek@email.com" autocomplete="email">
+        </div>
 
         <div class="form-group" style="margin-bottom:16px">
           <label>Şifre</label>
-          <input type="password" id="admin-pass" placeholder="Şifre giriniz" onkeydown="if(event.key==='Enter')checkLogin()" autocomplete="off">
+          <input type="password" id="admin-pass" placeholder="Şifre giriniz"
+            onkeydown="if(event.key==='Enter')checkLogin()" autocomplete="current-password">
         </div>
 
-        <button class="btn btn-primary" style="width:100%" onclick="checkLogin()">Giriş Yap →</button>
+        <button class="btn btn-primary" style="width:100%" onclick="checkLogin()" id="login-btn">Giriş Yap →</button>
         <button class="btn btn-outline" style="width:100%;margin-top:8px" onclick="showScreen('home')">← Geri Dön</button>
       </div>
     </div>
   </div>
 
+  <!-- ===================== ADMIN SCREEN ===================== -->
   <div id="admin-screen" class="screen">
     <nav>
       <div class="nav-logo"><div class="icon">⚡</div><span>Spor<span>Kayıt</span></span></div>
       <div style="display:flex;gap:8px;align-items:center">
-        <span style="font-size:0.8rem;color:var(--muted)">Yönetici Paneli</span>
-        <button class="btn btn-outline btn-sm" onclick="showScreen('home')">← Çıkış</button>
+        <span style="font-size:0.8rem;color:var(--muted)" id="admin-email-display"></span>
+        <button class="btn btn-outline btn-sm" onclick="logoutAdmin()">🚪 Çıkış Yap</button>
       </div>
     </nav>
 
@@ -628,6 +636,7 @@
     </div>
   </div>
 
+  <!-- ===================== MODAL ===================== -->
   <div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
     <div class="modal">
       <div class="modal-header">
@@ -650,6 +659,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
     import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyDaIBs4XszuDXkHqy42VQVYWc_ZDmtWwms",
@@ -664,6 +674,7 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const storage = getStorage(app);
+    const auth = getAuth(app);
 
     const MONTHS = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
 
@@ -672,6 +683,49 @@
     let editingFirebaseId = null;
     let existingFiles = { photo:'', healthReportUrl:'', parentPermissionUrl:'', otherDocumentUrl:'' };
     let photoPreviewData = null;
+
+    // ── Auth state listener ──────────────────────────────────────────
+    // Kullanıcı oturum durumunu takip eder.
+    // Sayfa yenilenirse bile oturum açıksa admin paneline yönlendirir.
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        document.getElementById('admin-email-display').textContent = user.email;
+        await loadStudents();
+        renderAdmin();
+        showScreen('admin-screen');
+      }
+    });
+
+    // ── Login ────────────────────────────────────────────────────────
+    async function checkLogin() {
+      const email = document.getElementById('admin-email').value.trim();
+      const password = document.getElementById('admin-pass').value;
+      const errEl = document.getElementById('login-error');
+      const btn = document.getElementById('login-btn');
+
+      errEl.style.display = 'none';
+      btn.textContent = '⏳ Giriş yapılıyor...';
+      btn.disabled = true;
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        // onAuthStateChanged otomatik yönlendirir
+      } catch (error) {
+        errEl.style.display = 'block';
+        btn.textContent = 'Giriş Yap →';
+        btn.disabled = false;
+      }
+    }
+
+    // ── Logout ───────────────────────────────────────────────────────
+    async function logoutAdmin() {
+      await signOut(auth);
+      document.getElementById('admin-email-display').textContent = '';
+      document.getElementById('admin-pass').value = '';
+      document.getElementById('admin-email').value = '';
+      showScreen('home');
+      showToast('👋 Çıkış yapıldı.');
+    }
 
     const fileInputs = [
       { id:'f-health-report', status:'f-health-report-status' },
@@ -755,18 +809,11 @@
     }
 
     function goAdmin() {
-      showScreen('login-screen');
-    }
-
-    async function checkLogin() {
-      if (document.getElementById('admin-pass').value === 'giresun2828') {
-        document.getElementById('login-error').style.display = 'none';
-        document.getElementById('admin-pass').value = '';
-        await loadStudents();
-        renderAdmin();
+      // Zaten oturum açıksa direkt panele git
+      if (auth.currentUser) {
         showScreen('admin-screen');
       } else {
-        document.getElementById('login-error').style.display = 'block';
+        showScreen('login-screen');
       }
     }
 
@@ -1459,6 +1506,7 @@
     window.showScreen = showScreen;
     window.goAdmin = goAdmin;
     window.checkLogin = checkLogin;
+    window.logoutAdmin = logoutAdmin;
     window.submitForm = submitForm;
     window.filterStudents = filterStudents;
     window.openModal = openModal;
@@ -1472,7 +1520,6 @@
 
     populateSelects();
     toggleConditionalFields();
-    loadStudents().then(() => showScreen('home'));
   </script>
 </body>
 </html>
