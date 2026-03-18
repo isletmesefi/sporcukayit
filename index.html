@@ -303,7 +303,6 @@
         <button class="nav-tab" onclick="goAdmin()">Yönetici</button>
       </div>
     </nav>
-
     <div style="flex:1;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse 80% 60% at 50% 20%,rgba(0,212,170,0.12) 0%,transparent 60%)">
       <div class="hero">
         <div class="hero-badge">⚡ Spor Branş Kayıt Sistemi</div>
@@ -357,12 +356,10 @@
 
       <div class="form-section">
         <div class="form-section-title">👤 Kişisel Bilgiler</div>
-
         <div class="form-row">
           <div class="form-group"><label>Ad</label><input type="text" id="f-firstname" placeholder=""></div>
           <div class="form-group"><label>Soyad</label><input type="text" id="f-lastname" placeholder=""></div>
         </div>
-
         <div class="form-row" style="margin-top:12px">
           <div class="form-group">
             <label>TC Kimlik No</label>
@@ -370,7 +367,6 @@
           </div>
           <div class="form-group"></div>
         </div>
-
         <div class="form-row" style="margin-top:12px">
           <div class="form-group">
             <label>Cinsiyet</label>
@@ -381,18 +377,13 @@
           </div>
           <div class="form-group"><label>Doğum Yeri</label><input type="text" id="f-birthplace" placeholder=""></div>
         </div>
-
         <div class="form-row" style="margin-top:12px">
           <div class="form-group">
             <label>Kategori</label>
             <select id="f-category">
               <option value="">Seçiniz</option>
-              <option>Süper Minik</option>
-              <option>Minik</option>
-              <option>Yıldızlar</option>
-              <option>Ümitler</option>
-              <option>Gençler</option>
-              <option>Büyükler</option>
+              <option>Süper Minik</option><option>Minik</option><option>Yıldızlar</option>
+              <option>Ümitler</option><option>Gençler</option><option>Büyükler</option>
             </select>
           </div>
           <div class="form-group">
@@ -404,16 +395,10 @@
             </select>
           </div>
         </div>
-
         <div style="margin-top:14px">
           <div class="form-section-title" style="font-size:0.72rem;margin-bottom:12px">📅 Doğum Tarihi</div>
           <div class="form-row triple">
-            <div class="form-group">
-              <label>Gün</label>
-              <select id="f-day">
-                <option value="">Gün</option>
-              </select>
-            </div>
+            <div class="form-group"><label>Gün</label><select id="f-day"><option value="">Gün</option></select></div>
             <div class="form-group">
               <label>Ay</label>
               <select id="f-month">
@@ -424,12 +409,7 @@
                 <option value="10">Ekim</option><option value="11">Kasım</option><option value="12">Aralık</option>
               </select>
             </div>
-            <div class="form-group">
-              <label>Yıl</label>
-              <select id="f-year">
-                <option value="">Yıl</option>
-              </select>
-            </div>
+            <div class="form-group"><label>Yıl</label><select id="f-year"><option value="">Yıl</option></select></div>
           </div>
         </div>
       </div>
@@ -447,28 +427,17 @@
         <div class="form-row">
           <div class="form-group">
             <label>Boy</label>
-            <div class="select-wrap">
-              <select id="f-height">
-                <option value="">Seçiniz</option>
-              </select>
-              <span class="select-unit">cm</span>
-            </div>
+            <div class="select-wrap"><select id="f-height"><option value="">Seçiniz</option></select><span class="select-unit">cm</span></div>
           </div>
           <div class="form-group">
             <label>Kilo</label>
-            <div class="select-wrap">
-              <select id="f-weight">
-                <option value="">Seçiniz</option>
-              </select>
-              <span class="select-unit">kg</span>
-            </div>
+            <div class="select-wrap"><select id="f-weight"><option value="">Seçiniz</option></select><span class="select-unit">kg</span></div>
           </div>
         </div>
       </div>
 
       <div class="form-section">
         <div class="form-section-title">🏥 Sağlık Bilgileri</div>
-
         <div class="form-group" style="margin-bottom:14px">
           <label>Kullandığı İlaç Var Mı?</label>
           <div class="radio-group">
@@ -476,12 +445,9 @@
             <label class="radio-option"><input type="radio" name="medication" value="Var"> Var</label>
           </div>
         </div>
-
         <div class="form-group" id="medication-detail-group" style="margin-bottom:14px;display:none">
-          <label>İlaç Detayı</label>
-          <input type="text" id="f-medication-detail" placeholder="">
+          <label>İlaç Detayı</label><input type="text" id="f-medication-detail" placeholder="">
         </div>
-
         <div class="form-group" style="margin-bottom:14px">
           <label>Alerjisi Var Mı?</label>
           <div class="radio-group">
@@ -489,10 +455,8 @@
             <label class="radio-option"><input type="radio" name="allergy" value="Var"> Var</label>
           </div>
         </div>
-
         <div class="form-group" id="allergy-detail-group" style="display:none">
-          <label>Alerji Detayı</label>
-          <input type="text" id="f-allergy-detail" placeholder="">
+          <label>Alerji Detayı</label><input type="text" id="f-allergy-detail" placeholder="">
         </div>
       </div>
 
@@ -510,42 +474,34 @@
           <div class="form-group"><label>2. Veli Adı Soyadı</label><input type="text" id="f-parent2" placeholder=""></div>
           <div class="form-group"><label>2. Veli Telefon</label><input type="tel" id="f-phone2" placeholder=""></div>
         </div>
-
         <div class="form-group" style="margin-top:12px">
-          <label>Adres</label>
-          <textarea id="f-address" placeholder=""></textarea>
+          <label>Adres</label><textarea id="f-address" placeholder=""></textarea>
         </div>
-
         <div class="form-group" style="margin-top:12px">
-          <label>Ek Notlar</label>
-          <textarea id="f-notes" placeholder=""></textarea>
+          <label>Ek Notlar</label><textarea id="f-notes" placeholder=""></textarea>
         </div>
       </div>
 
       <div class="form-section">
         <div class="form-section-title">📎 Belgeler</div>
-
         <div class="form-row">
           <div class="file-card">
             <label>Sağlık Raporu (PDF/JPG/PNG)</label>
             <input type="file" id="f-health-report" accept=".pdf,image/*">
             <div class="file-status" id="f-health-report-status">Henüz dosya seçilmedi.</div>
           </div>
-
           <div class="file-card">
             <label>Veli İzin Belgesi (PDF/JPG/PNG)</label>
             <input type="file" id="f-parent-permission" accept=".pdf,image/*">
             <div class="file-status" id="f-parent-permission-status">Henüz dosya seçilmedi.</div>
           </div>
         </div>
-
         <div class="form-row" style="margin-top:12px">
           <div class="file-card">
             <label>Diğer Belgeler (PDF/JPG/PNG)</label>
             <input type="file" id="f-other-document" accept=".pdf,image/*">
             <div class="file-status" id="f-other-document-status">Henüz dosya seçilmedi.</div>
           </div>
-
           <div class="file-card">
             <label>Bilgi</label>
             <div class="file-status">Belgeler veli tarafından yüklenir. Düzenleme sırasında yeni dosya seçilmezse mevcut belge korunur.</div>
@@ -568,7 +524,7 @@
     </div>
   </div>
 
-  <!-- ===================== LOGIN SCREEN ===================== -->
+  <!-- LOGIN -->
   <div id="login-screen" class="screen">
     <nav>
       <div class="nav-logo"><div class="icon">⚡</div><span>Spor<span>Kayıt</span></span></div>
@@ -578,42 +534,32 @@
         <button class="nav-tab active">Yönetici</button>
       </div>
     </nav>
-
     <div style="flex:1;display:flex;align-items:center;justify-content:center;">
       <div class="login-box">
         <div style="font-size:2rem;margin-bottom:16px">🔐</div>
         <h2>Yönetici Girişi</h2>
-        <p>Panele erişmek için e-posta ve şifrenizi girin.</p>
-
-        <div class="login-error" id="login-error">❌ Hatalı e-posta veya şifre. Tekrar deneyin.</div>
-
-        <div class="form-group" style="margin-bottom:12px">
-          <label>E-posta</label>
-          <input type="email" id="admin-email" placeholder="ornek@email.com" autocomplete="email">
-        </div>
-
+        <p>Panele erişmek için şifrenizi girin.</p>
+        <div class="login-error" id="login-error">❌ Hatalı şifre. Tekrar deneyin.</div>
         <div class="form-group" style="margin-bottom:16px">
           <label>Şifre</label>
           <input type="password" id="admin-pass" placeholder="Şifre giriniz"
-            onkeydown="if(event.key==='Enter')checkLogin()" autocomplete="current-password">
+            onkeydown="if(event.key==='Enter')checkLogin()" autocomplete="off">
         </div>
-
         <button class="btn btn-primary" style="width:100%" onclick="checkLogin()" id="login-btn">Giriş Yap →</button>
         <button class="btn btn-outline" style="width:100%;margin-top:8px" onclick="showScreen('home')">← Geri Dön</button>
       </div>
     </div>
   </div>
 
-  <!-- ===================== ADMIN SCREEN ===================== -->
+  <!-- ADMIN -->
   <div id="admin-screen" class="screen">
     <nav>
       <div class="nav-logo"><div class="icon">⚡</div><span>Spor<span>Kayıt</span></span></div>
       <div style="display:flex;gap:8px;align-items:center">
-        <span style="font-size:0.8rem;color:var(--muted)" id="admin-email-display"></span>
+        <span style="font-size:0.8rem;color:var(--muted)">Yönetici Paneli</span>
         <button class="btn btn-outline btn-sm" onclick="logoutAdmin()">🚪 Çıkış Yap</button>
       </div>
     </nav>
-
     <div class="admin-container">
       <div class="admin-header">
         <h2>Sporcu Kayıtları</h2>
@@ -622,21 +568,18 @@
           <button class="btn btn-primary btn-sm" onclick="prepareNewRecord()">+ Yeni Kayıt</button>
         </div>
       </div>
-
       <div class="stats-row" id="stats-row"></div>
-
       <div class="search-bar">
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
           <input type="text" id="search-input" placeholder="Ad, TC, veli, okul, kategori, şehir ara..." oninput="filterStudents()">
         </div>
       </div>
-
       <div class="cards-grid" id="cards-grid"></div>
     </div>
   </div>
 
-  <!-- ===================== MODAL ===================== -->
+  <!-- MODAL -->
   <div class="modal-overlay" id="modal-overlay" onclick="if(event.target===this)closeModal()">
     <div class="modal">
       <div class="modal-header">
@@ -657,9 +600,8 @@
 
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+    import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
     import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
-    import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyDaIBs4XszuDXkHqy42VQVYWc_ZDmtWwms",
@@ -667,62 +609,70 @@
       projectId: "sporcukayit",
       storageBucket: "sporcukayit.firebasestorage.app",
       messagingSenderId: "484067557749",
-      appId: "1:484067557749:web:f73906702d58e8e79b133c",
-      measurementId: "G-1CPBNSY38B"
+      appId: "1:484067557749:web:f73906702d58e8e79b133c"
     };
 
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
     const storage = getStorage(app);
-    const auth = getAuth(app);
 
-    const MONTHS = ['', 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+    const MONTHS = ['','Ocak','Şubat','Mart','Nisan','Mayıs','Haziran','Temmuz','Ağustos','Eylül','Ekim','Kasım','Aralık'];
 
     let students = [];
     let currentStudent = null;
     let editingFirebaseId = null;
     let existingFiles = { photo:'', healthReportUrl:'', parentPermissionUrl:'', otherDocumentUrl:'' };
     let photoPreviewData = null;
+    let isAdminLoggedIn = false;
 
-    // ── Auth state listener ──────────────────────────────────────────
-    // Kullanıcı oturum durumunu takip eder.
-    // Sayfa yenilenirse bile oturum açıksa admin paneline yönlendirir.
-    onAuthStateChanged(auth, async (user) => {
-      if (user) {
-        document.getElementById('admin-email-display').textContent = user.email;
-        await loadStudents();
-        renderAdmin();
-        showScreen('admin-screen');
-      }
-    });
+    function checkSession() {
+      return sessionStorage.getItem('adminLoggedIn') === 'true';
+    }
 
-    // ── Login ────────────────────────────────────────────────────────
+    // ── Giriş: şifreyi Firestore'dan çekip karşılaştırır ────────────
     async function checkLogin() {
-      const email = document.getElementById('admin-email').value.trim();
-      const password = document.getElementById('admin-pass').value;
+      const entered = document.getElementById('admin-pass').value;
       const errEl = document.getElementById('login-error');
       const btn = document.getElementById('login-btn');
 
       errEl.style.display = 'none';
-      btn.textContent = '⏳ Giriş yapılıyor...';
+      btn.textContent = '⏳ Kontrol ediliyor...';
       btn.disabled = true;
 
       try {
-        await signInWithEmailAndPassword(auth, email, password);
-        // onAuthStateChanged otomatik yönlendirir
-      } catch (error) {
-        errEl.style.display = 'block';
-        btn.textContent = 'Giriş Yap →';
-        btn.disabled = false;
+        const configSnap = await getDoc(doc(db, 'config', 'admin'));
+
+        if (!configSnap.exists()) {
+          showToast('❌ Yapılandırma bulunamadı. Firebase\'de config/admin belgesi yok.');
+          btn.textContent = 'Giriş Yap →';
+          btn.disabled = false;
+          return;
+        }
+
+        const correctPassword = configSnap.data().password;
+
+        if (entered === correctPassword) {
+          isAdminLoggedIn = true;
+          sessionStorage.setItem('adminLoggedIn', 'true');
+          document.getElementById('admin-pass').value = '';
+          await loadStudents();
+          renderAdmin();
+          showScreen('admin-screen');
+        } else {
+          errEl.style.display = 'block';
+        }
+      } catch (err) {
+        console.error(err);
+        showToast('❌ Bağlantı hatası: ' + (err.message || 'Bilinmeyen hata'));
       }
+
+      btn.textContent = 'Giriş Yap →';
+      btn.disabled = false;
     }
 
-    // ── Logout ───────────────────────────────────────────────────────
-    async function logoutAdmin() {
-      await signOut(auth);
-      document.getElementById('admin-email-display').textContent = '';
-      document.getElementById('admin-pass').value = '';
-      document.getElementById('admin-email').value = '';
+    function logoutAdmin() {
+      isAdminLoggedIn = false;
+      sessionStorage.removeItem('adminLoggedIn');
       showScreen('home');
       showToast('👋 Çıkış yapıldı.');
     }
@@ -741,515 +691,330 @@
     });
 
     document.getElementById('photo-input').addEventListener('change', function(e) {
-      const file = e.target.files[0];
-      handlePhotoFile(file);
+      handlePhotoFile(e.target.files[0]);
     });
 
-    document.getElementById('f-tcno').addEventListener('input', function (e) {
-      e.target.value = e.target.value.replace(/\D/g, '').slice(0, 11);
+    document.getElementById('f-tcno').addEventListener('input', function(e) {
+      e.target.value = e.target.value.replace(/\D/g,'').slice(0,11);
     });
 
     function populateSelects() {
-      const day = document.getElementById('f-day');
-      const year = document.getElementById('f-year');
-      const height = document.getElementById('f-height');
-      const weight = document.getElementById('f-weight');
-
-      for (let i = 1; i <= 31; i++) {
-        const op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        day.appendChild(op);
-      }
-
-      for (let i = new Date().getFullYear(); i >= 2000; i--) {
-        const op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        year.appendChild(op);
-      }
-
-      for (let i = 80; i <= 220; i++) {
-        const op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        height.appendChild(op);
-      }
-
-      for (let i = 15; i <= 150; i++) {
-        const op = document.createElement('option');
-        op.value = i;
-        op.textContent = i;
-        weight.appendChild(op);
-      }
+      const day=document.getElementById('f-day'), year=document.getElementById('f-year');
+      const height=document.getElementById('f-height'), weight=document.getElementById('f-weight');
+      for(let i=1;i<=31;i++){const o=document.createElement('option');o.value=i;o.textContent=i;day.appendChild(o);}
+      for(let i=new Date().getFullYear();i>=2000;i--){const o=document.createElement('option');o.value=i;o.textContent=i;year.appendChild(o);}
+      for(let i=80;i<=220;i++){const o=document.createElement('option');o.value=i;o.textContent=i;height.appendChild(o);}
+      for(let i=15;i<=150;i++){const o=document.createElement('option');o.value=i;o.textContent=i;weight.appendChild(o);}
     }
 
     async function loadStudents() {
       try {
-        const snapshot = await getDocs(collection(db, 'students'));
-        students = snapshot.docs.map((docSnap, index) => ({
-          id: index + 1,
-          firebaseId: docSnap.id,
-          ...docSnap.data()
-        }));
-
-        students.sort((a, b) => String(b.registeredAt || '').localeCompare(String(a.registeredAt || '')));
-        students.forEach((s, i) => s.id = i + 1);
-      } catch (error) {
-        console.error(error);
-        students = [];
-        showToast('⚠️ Firebase verileri alınamadı.');
+        const snapshot = await getDocs(collection(db,'students'));
+        students = snapshot.docs.map((d,i) => ({id:i+1, firebaseId:d.id, ...d.data()}));
+        students.sort((a,b) => String(b.registeredAt||'').localeCompare(String(a.registeredAt||'')));
+        students.forEach((s,i) => s.id=i+1);
+      } catch(e) {
+        console.error(e); students=[]; showToast('⚠️ Firebase verileri alınamadı.');
       }
     }
 
     function showScreen(id) {
-      document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+      if(id==='admin-screen' && !isAdminLoggedIn && !checkSession()){
+        showScreen('login-screen'); return;
+      }
+      document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
       document.getElementById(id).classList.add('active');
       window.scrollTo(0,0);
     }
 
     function goAdmin() {
-      // Zaten oturum açıksa direkt panele git
-      if (auth.currentUser) {
-        showScreen('admin-screen');
-      } else {
-        showScreen('login-screen');
-      }
+      if(isAdminLoggedIn||checkSession()){ isAdminLoggedIn=true; showScreen('admin-screen'); }
+      else showScreen('login-screen');
     }
 
-    function prepareNewRecord() {
-      resetForm();
-      showScreen('form-screen');
-    }
+    function prepareNewRecord(){ resetForm(); showScreen('form-screen'); }
 
     function toggleConditionalFields() {
-      const medVal = document.querySelector('input[name="medication"]:checked')?.value;
-      const allergyVal = document.querySelector('input[name="allergy"]:checked')?.value;
-      document.getElementById('medication-detail-group').style.display = medVal === 'Var' ? 'flex' : 'none';
-      document.getElementById('allergy-detail-group').style.display = allergyVal === 'Var' ? 'flex' : 'none';
+      const medVal=document.querySelector('input[name="medication"]:checked')?.value;
+      const allergyVal=document.querySelector('input[name="allergy"]:checked')?.value;
+      document.getElementById('medication-detail-group').style.display=medVal==='Var'?'flex':'none';
+      document.getElementById('allergy-detail-group').style.display=allergyVal==='Var'?'flex':'none';
     }
 
-    document.querySelectorAll('input[name="medication"]').forEach(r => r.addEventListener('change', toggleConditionalFields));
-    document.querySelectorAll('input[name="allergy"]').forEach(r => r.addEventListener('change', toggleConditionalFields));
+    document.querySelectorAll('input[name="medication"]').forEach(r=>r.addEventListener('change',toggleConditionalFields));
+    document.querySelectorAll('input[name="allergy"]').forEach(r=>r.addEventListener('change',toggleConditionalFields));
 
     function handlePhotoFile(file) {
-      if (!file) return;
-
-      if (!file.type.startsWith('image/')) {
-        showToast('⚠️ Lütfen geçerli bir fotoğraf seçin.');
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = function(ev) {
-        photoPreviewData = ev.target.result;
-        const preview = document.getElementById('photo-preview');
-        const placeholder = document.getElementById('photo-placeholder');
-        preview.src = photoPreviewData;
-        preview.style.display = 'block';
-        placeholder.style.display = 'none';
+      if(!file) return;
+      if(!file.type.startsWith('image/')){ showToast('⚠️ Lütfen geçerli bir fotoğraf seçin.'); return; }
+      const reader=new FileReader();
+      reader.onload=ev=>{
+        photoPreviewData=ev.target.result;
+        const preview=document.getElementById('photo-preview');
+        preview.src=photoPreviewData; preview.style.display='block';
+        document.getElementById('photo-placeholder').style.display='none';
       };
       reader.readAsDataURL(file);
     }
 
-    async function compressImage(file, maxWidth = 1400, quality = 0.78) {
-      return new Promise((resolve, reject) => {
-        if (!file.type.startsWith('image/')) {
-          reject(new Error('Geçerli bir görsel seçilmedi.'));
-          return;
-        }
-
-        const reader = new FileReader();
-        reader.onload = (event) => {
-          const img = new Image();
-          img.onload = () => {
-            let width = img.width;
-            let height = img.height;
-
-            if (width > maxWidth) {
-              height = Math.round((height * maxWidth) / width);
-              width = maxWidth;
-            }
-
-            const canvas = document.createElement('canvas');
-            canvas.width = width;
-            canvas.height = height;
-
-            const ctx = canvas.getContext('2d');
-            ctx.drawImage(img, 0, 0, width, height);
-
-            canvas.toBlob((blob) => {
-              if (!blob) {
-                reject(new Error('Fotoğraf sıkıştırılamadı.'));
-                return;
-              }
-
-              const compressedFile = new File(
-                [blob],
-                file.name.replace(/\.[^.]+$/, '.jpg'),
-                { type: 'image/jpeg' }
-              );
-
-              resolve(compressedFile);
-            }, 'image/jpeg', quality);
+    async function compressImage(file,maxWidth=1400,quality=0.78) {
+      return new Promise((resolve,reject)=>{
+        if(!file.type.startsWith('image/')){ reject(new Error('Geçerli bir görsel seçilmedi.')); return; }
+        const reader=new FileReader();
+        reader.onload=ev=>{
+          const img=new Image();
+          img.onload=()=>{
+            let w=img.width,h=img.height;
+            if(w>maxWidth){h=Math.round(h*maxWidth/w);w=maxWidth;}
+            const canvas=document.createElement('canvas');
+            canvas.width=w;canvas.height=h;
+            canvas.getContext('2d').drawImage(img,0,0,w,h);
+            canvas.toBlob(blob=>{
+              if(!blob){reject(new Error('Fotoğraf sıkıştırılamadı.'));return;}
+              resolve(new File([blob],file.name.replace(/\.[^.]+$/,'.jpg'),{type:'image/jpeg'}));
+            },'image/jpeg',quality);
           };
-
-          img.onerror = () => reject(new Error('Fotoğraf okunamadı.'));
-          img.src = event.target.result;
+          img.onerror=()=>reject(new Error('Fotoğraf okunamadı.'));
+          img.src=ev.target.result;
         };
-
-        reader.onerror = () => reject(new Error('Dosya okunamadı.'));
+        reader.onerror=()=>reject(new Error('Dosya okunamadı.'));
         reader.readAsDataURL(file);
       });
     }
 
-    async function uploadFileIfNeeded(inputId, folder, fallbackUrl = '') {
-      const input = document.getElementById(inputId);
-      if (!input) return fallbackUrl || '';
-
-      const file = input.files && input.files[0];
-      if (!file) return fallbackUrl || '';
-
-      let uploadFile = file;
-
-      if (inputId === 'photo-input') {
-        uploadFile = await compressImage(file, 1400, 0.78);
-      }
-
-      const safeName = `${Date.now()}_${uploadFile.name.replace(/[^a-zA-Z0-9._-]/g, '_')}`;
-
-      try {
-        const fileRef = ref(storage, `${folder}/${safeName}`);
-        await uploadBytes(fileRef, uploadFile);
+    async function uploadFileIfNeeded(inputId,folder,fallbackUrl='') {
+      const input=document.getElementById(inputId);
+      if(!input) return fallbackUrl||'';
+      const file=input.files&&input.files[0];
+      if(!file) return fallbackUrl||'';
+      let uploadFile=file;
+      if(inputId==='photo-input') uploadFile=await compressImage(file,1400,0.78);
+      const safeName=`${Date.now()}_${uploadFile.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
+      try{
+        const fileRef=ref(storage,`${folder}/${safeName}`);
+        await uploadBytes(fileRef,uploadFile);
         return await getDownloadURL(fileRef);
-      } catch (error) {
-        console.error(`Yükleme hatası (${inputId})`, error);
-        throw new Error(`${inputId} yüklenemedi: ${error.code || error.message}`);
+      }catch(e){
+        console.error(e);
+        throw new Error(`${inputId} yüklenemedi: ${e.code||e.message}`);
       }
     }
 
     function getStudentPayloadBase() {
       return {
-        firstName: document.getElementById('f-firstname').value.trim(),
-        lastName: document.getElementById('f-lastname').value.trim(),
-        tcNo: document.getElementById('f-tcno').value.trim(),
-        gender: document.querySelector('input[name="gender"]:checked')?.value || '',
-        category: document.getElementById('f-category').value,
-        school: document.getElementById('f-school').value.trim(),
-        classroom: document.getElementById('f-classroom').value.trim(),
-        birthDay: parseInt(document.getElementById('f-day').value) || null,
-        birthMonth: parseInt(document.getElementById('f-month').value) || null,
-        birthYear: parseInt(document.getElementById('f-year').value) || null,
-        birthPlace: document.getElementById('f-birthplace').value.trim(),
-        blood: document.getElementById('f-blood').value,
-        height: parseInt(document.getElementById('f-height').value) || null,
-        weight: parseInt(document.getElementById('f-weight').value) || null,
-        medication: document.querySelector('input[name="medication"]:checked')?.value || 'Yok',
-        medicationDetail: document.getElementById('f-medication-detail').value.trim(),
-        allergy: document.querySelector('input[name="allergy"]:checked')?.value || 'Yok',
-        allergyDetail: document.getElementById('f-allergy-detail').value.trim(),
-        parent1: document.getElementById('f-parent1').value.trim(),
-        phone1: document.getElementById('f-phone1').value.trim(),
-        parent2: document.getElementById('f-parent2').value.trim(),
-        phone2: document.getElementById('f-phone2').value.trim(),
-        address: document.getElementById('f-address').value.trim(),
-        notes: document.getElementById('f-notes').value.trim(),
-        achievements: document.getElementById('f-achievements').value.trim()
+        firstName:document.getElementById('f-firstname').value.trim(),
+        lastName:document.getElementById('f-lastname').value.trim(),
+        tcNo:document.getElementById('f-tcno').value.trim(),
+        gender:document.querySelector('input[name="gender"]:checked')?.value||'',
+        category:document.getElementById('f-category').value,
+        school:document.getElementById('f-school').value.trim(),
+        classroom:document.getElementById('f-classroom').value.trim(),
+        birthDay:parseInt(document.getElementById('f-day').value)||null,
+        birthMonth:parseInt(document.getElementById('f-month').value)||null,
+        birthYear:parseInt(document.getElementById('f-year').value)||null,
+        birthPlace:document.getElementById('f-birthplace').value.trim(),
+        blood:document.getElementById('f-blood').value,
+        height:parseInt(document.getElementById('f-height').value)||null,
+        weight:parseInt(document.getElementById('f-weight').value)||null,
+        medication:document.querySelector('input[name="medication"]:checked')?.value||'Yok',
+        medicationDetail:document.getElementById('f-medication-detail').value.trim(),
+        allergy:document.querySelector('input[name="allergy"]:checked')?.value||'Yok',
+        allergyDetail:document.getElementById('f-allergy-detail').value.trim(),
+        parent1:document.getElementById('f-parent1').value.trim(),
+        phone1:document.getElementById('f-phone1').value.trim(),
+        parent2:document.getElementById('f-parent2').value.trim(),
+        phone2:document.getElementById('f-phone2').value.trim(),
+        address:document.getElementById('f-address').value.trim(),
+        notes:document.getElementById('f-notes').value.trim(),
+        achievements:document.getElementById('f-achievements').value.trim()
       };
     }
 
     async function submitForm() {
-      const base = getStudentPayloadBase();
-
-      if (!base.firstName || !base.lastName) {
-        showToast('⚠️ Ad ve soyad zorunludur.');
-        return;
-      }
-
-      if (base.tcNo && !/^\d{11}$/.test(base.tcNo)) {
-        showToast('⚠️ TC Kimlik No 11 haneli olmalıdır.');
-        return;
-      }
-
-      try {
+      const base=getStudentPayloadBase();
+      if(!base.firstName||!base.lastName){showToast('⚠️ Ad ve soyad zorunludur.');return;}
+      if(base.tcNo&&!/^\d{11}$/.test(base.tcNo)){showToast('⚠️ TC Kimlik No 11 haneli olmalıdır.');return;}
+      try{
         showToast('⏳ Dosyalar yükleniyor...');
-
-        const photoUrl = await uploadFileIfNeeded('photo-input', 'photos', existingFiles.photo);
-        const healthReportUrl = await uploadFileIfNeeded('f-health-report', 'documents', existingFiles.healthReportUrl);
-        const parentPermissionUrl = await uploadFileIfNeeded('f-parent-permission', 'documents', existingFiles.parentPermissionUrl);
-        const otherDocumentUrl = await uploadFileIfNeeded('f-other-document', 'documents', existingFiles.otherDocumentUrl);
-
-        const payload = {
-          ...base,
-          photo: photoUrl,
-          healthReportUrl,
-          parentPermissionUrl,
-          otherDocumentUrl
-        };
-
-        if (editingFirebaseId) {
-          await updateDoc(doc(db, 'students', editingFirebaseId), payload);
-          document.getElementById('success-title').textContent = 'Kayıt Güncellendi!';
-          document.getElementById('success-subtitle').textContent = 'Sporcu bilgileri ve belgeler başarıyla güncellendi.';
+        const photoUrl=await uploadFileIfNeeded('photo-input','photos',existingFiles.photo);
+        const healthReportUrl=await uploadFileIfNeeded('f-health-report','documents',existingFiles.healthReportUrl);
+        const parentPermissionUrl=await uploadFileIfNeeded('f-parent-permission','documents',existingFiles.parentPermissionUrl);
+        const otherDocumentUrl=await uploadFileIfNeeded('f-other-document','documents',existingFiles.otherDocumentUrl);
+        const payload={...base,photo:photoUrl,healthReportUrl,parentPermissionUrl,otherDocumentUrl};
+        if(editingFirebaseId){
+          await updateDoc(doc(db,'students',editingFirebaseId),payload);
+          document.getElementById('success-title').textContent='Kayıt Güncellendi!';
+          document.getElementById('success-subtitle').textContent='Sporcu bilgileri ve belgeler başarıyla güncellendi.';
           showToast('✅ Kayıt güncellendi.');
-        } else {
-          await addDoc(collection(db, 'students'), {
-            ...payload,
-            registeredAt: new Date().toISOString().split('T')[0]
-          });
-          document.getElementById('success-title').textContent = 'Kayıt Başarıyla Tamamlandı!';
-          document.getElementById('success-subtitle').textContent = 'Sporcu bilgileri sisteme eklendi.';
+        }else{
+          await addDoc(collection(db,'students'),{...payload,registeredAt:new Date().toISOString().split('T')[0]});
+          document.getElementById('success-title').textContent='Kayıt Başarıyla Tamamlandı!';
+          document.getElementById('success-subtitle').textContent='Sporcu bilgileri sisteme eklendi.';
           showToast('✅ Yeni kayıt eklendi.');
         }
-
-        await loadStudents();
-        renderAdmin();
-        resetForm();
-
-        const banner = document.getElementById('success-banner');
+        await loadStudents(); renderAdmin(); resetForm();
+        const banner=document.getElementById('success-banner');
         banner.classList.add('show');
-        setTimeout(() => banner.classList.remove('show'), 4000);
-
+        setTimeout(()=>banner.classList.remove('show'),4000);
         showScreen('form-screen');
-      } catch (error) {
-        console.error(error);
-        showToast(`❌ ${error.message || 'Dosya yükleme hatası oluştu.'}`);
-      }
+      }catch(e){console.error(e);showToast(`❌ ${e.message||'Dosya yükleme hatası oluştu.'}`);}
     }
 
     function resetForm() {
-      editingFirebaseId = null;
-      currentStudent = null;
-      photoPreviewData = null;
-      existingFiles = { photo:'', healthReportUrl:'', parentPermissionUrl:'', otherDocumentUrl:'' };
-
-      [
-        'f-firstname','f-lastname','f-tcno','f-school','f-classroom','f-birthplace',
-        'f-medication-detail','f-allergy-detail','f-parent1','f-phone1',
-        'f-parent2','f-phone2','f-address','f-notes','f-achievements'
-      ].forEach(id => document.getElementById(id).value = '');
-
-      ['f-day','f-month','f-year','f-blood','f-height','f-weight','f-category']
-        .forEach(id => document.getElementById(id).value = '');
-
-      document.querySelector('input[name="gender"][value="Erkek"]').checked = true;
-      document.querySelector('input[name="medication"][value="Yok"]').checked = true;
-      document.querySelector('input[name="allergy"][value="Yok"]').checked = true;
-
+      editingFirebaseId=null;currentStudent=null;photoPreviewData=null;
+      existingFiles={photo:'',healthReportUrl:'',parentPermissionUrl:'',otherDocumentUrl:''};
+      ['f-firstname','f-lastname','f-tcno','f-school','f-classroom','f-birthplace',
+       'f-medication-detail','f-allergy-detail','f-parent1','f-phone1',
+       'f-parent2','f-phone2','f-address','f-notes','f-achievements'].forEach(id=>document.getElementById(id).value='');
+      ['f-day','f-month','f-year','f-blood','f-height','f-weight','f-category'].forEach(id=>document.getElementById(id).value='');
+      document.querySelector('input[name="gender"][value="Erkek"]').checked=true;
+      document.querySelector('input[name="medication"][value="Yok"]').checked=true;
+      document.querySelector('input[name="allergy"][value="Yok"]').checked=true;
       toggleConditionalFields();
-
-      document.getElementById('photo-preview').style.display = 'none';
-      document.getElementById('photo-placeholder').style.display = 'block';
-      document.getElementById('photo-input').value = '';
-      document.getElementById('photo-current-link').innerHTML = '';
-
-      fileInputs.forEach(item => {
-        document.getElementById(item.id).value = '';
-        document.getElementById(item.status).textContent = 'Henüz dosya seçilmedi.';
-      });
-
-      document.getElementById('form-main-title').textContent = 'Öğrenci Kayıt Formu';
-      document.getElementById('form-main-subtitle').textContent = 'Lütfen tüm alanları eksiksiz doldurunuz.';
-      document.getElementById('submit-btn').textContent = '✅ Kaydı Tamamla';
-      document.getElementById('cancel-edit-btn').style.display = 'none';
+      document.getElementById('photo-preview').style.display='none';
+      document.getElementById('photo-placeholder').style.display='block';
+      document.getElementById('photo-input').value='';
+      document.getElementById('photo-current-link').innerHTML='';
+      fileInputs.forEach(item=>{document.getElementById(item.id).value='';document.getElementById(item.status).textContent='Henüz dosya seçilmedi.';});
+      document.getElementById('form-main-title').textContent='Öğrenci Kayıt Formu';
+      document.getElementById('form-main-subtitle').textContent='Lütfen tüm alanları eksiksiz doldurunuz.';
+      document.getElementById('submit-btn').textContent='✅ Kaydı Tamamla';
+      document.getElementById('cancel-edit-btn').style.display='none';
     }
 
-    function cancelEdit() {
-      resetForm();
-      showScreen('admin-screen');
-    }
+    function cancelEdit(){resetForm();showScreen('admin-screen');}
 
-    function linkText(url, label) {
-      return url ? `<a class="file-link" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>` : 'Yok';
+    function linkText(url,label){
+      return url?`<a class="file-link" href="${url}" target="_blank" rel="noopener noreferrer">${label}</a>`:'Yok';
     }
 
     function fillForm(student) {
-      editingFirebaseId = student.firebaseId || null;
-      existingFiles = {
-        photo: student.photo || '',
-        healthReportUrl: student.healthReportUrl || '',
-        parentPermissionUrl: student.parentPermissionUrl || '',
-        otherDocumentUrl: student.otherDocumentUrl || ''
-      };
-      photoPreviewData = student.photo || null;
-
-      document.getElementById('f-firstname').value = student.firstName || '';
-      document.getElementById('f-lastname').value = student.lastName || '';
-      document.getElementById('f-tcno').value = student.tcNo || '';
-      document.getElementById('f-category').value = student.category || '';
-      document.getElementById('f-school').value = student.school || '';
-      document.getElementById('f-classroom').value = student.classroom || '';
-      document.getElementById('f-day').value = student.birthDay || '';
-      document.getElementById('f-month').value = student.birthMonth || '';
-      document.getElementById('f-year').value = student.birthYear || '';
-      document.getElementById('f-birthplace').value = student.birthPlace || '';
-      document.getElementById('f-blood').value = student.blood || '';
-      document.getElementById('f-height').value = student.height || '';
-      document.getElementById('f-weight').value = student.weight || '';
-      document.getElementById('f-medication-detail').value = student.medicationDetail || '';
-      document.getElementById('f-allergy-detail').value = student.allergyDetail || '';
-      document.getElementById('f-parent1').value = student.parent1 || '';
-      document.getElementById('f-phone1').value = student.phone1 || '';
-      document.getElementById('f-parent2').value = student.parent2 || '';
-      document.getElementById('f-phone2').value = student.phone2 || '';
-      document.getElementById('f-address').value = student.address || '';
-      document.getElementById('f-notes').value = student.notes || '';
-      document.getElementById('f-achievements').value = student.achievements || '';
-
-      document.querySelector(`input[name="gender"][value="${student.gender || 'Erkek'}"]`).checked = true;
-      document.querySelector(`input[name="medication"][value="${student.medication || 'Yok'}"]`).checked = true;
-      document.querySelector(`input[name="allergy"][value="${student.allergy || 'Yok'}"]`).checked = true;
-
+      editingFirebaseId=student.firebaseId||null;
+      existingFiles={photo:student.photo||'',healthReportUrl:student.healthReportUrl||'',parentPermissionUrl:student.parentPermissionUrl||'',otherDocumentUrl:student.otherDocumentUrl||''};
+      photoPreviewData=student.photo||null;
+      document.getElementById('f-firstname').value=student.firstName||'';
+      document.getElementById('f-lastname').value=student.lastName||'';
+      document.getElementById('f-tcno').value=student.tcNo||'';
+      document.getElementById('f-category').value=student.category||'';
+      document.getElementById('f-school').value=student.school||'';
+      document.getElementById('f-classroom').value=student.classroom||'';
+      document.getElementById('f-day').value=student.birthDay||'';
+      document.getElementById('f-month').value=student.birthMonth||'';
+      document.getElementById('f-year').value=student.birthYear||'';
+      document.getElementById('f-birthplace').value=student.birthPlace||'';
+      document.getElementById('f-blood').value=student.blood||'';
+      document.getElementById('f-height').value=student.height||'';
+      document.getElementById('f-weight').value=student.weight||'';
+      document.getElementById('f-medication-detail').value=student.medicationDetail||'';
+      document.getElementById('f-allergy-detail').value=student.allergyDetail||'';
+      document.getElementById('f-parent1').value=student.parent1||'';
+      document.getElementById('f-phone1').value=student.phone1||'';
+      document.getElementById('f-parent2').value=student.parent2||'';
+      document.getElementById('f-phone2').value=student.phone2||'';
+      document.getElementById('f-address').value=student.address||'';
+      document.getElementById('f-notes').value=student.notes||'';
+      document.getElementById('f-achievements').value=student.achievements||'';
+      document.querySelector(`input[name="gender"][value="${student.gender||'Erkek'}"]`).checked=true;
+      document.querySelector(`input[name="medication"][value="${student.medication||'Yok'}"]`).checked=true;
+      document.querySelector(`input[name="allergy"][value="${student.allergy||'Yok'}"]`).checked=true;
       toggleConditionalFields();
-
-      if (photoPreviewData) {
-        const p = document.getElementById('photo-preview');
-        p.src = photoPreviewData;
-        p.style.display = 'block';
-        document.getElementById('photo-placeholder').style.display = 'none';
-        document.getElementById('photo-current-link').innerHTML = `<a class="file-link" href="${student.photo}" target="_blank" rel="noopener noreferrer">Mevcut fotoğrafı aç</a>`;
-      } else {
-        document.getElementById('photo-preview').style.display = 'none';
-        document.getElementById('photo-placeholder').style.display = 'block';
-        document.getElementById('photo-current-link').innerHTML = '';
+      if(photoPreviewData){
+        const p=document.getElementById('photo-preview');
+        p.src=photoPreviewData;p.style.display='block';
+        document.getElementById('photo-placeholder').style.display='none';
+        document.getElementById('photo-current-link').innerHTML=`<a class="file-link" href="${student.photo}" target="_blank">Mevcut fotoğrafı aç</a>`;
+      }else{
+        document.getElementById('photo-preview').style.display='none';
+        document.getElementById('photo-placeholder').style.display='block';
+        document.getElementById('photo-current-link').innerHTML='';
       }
-
-      document.getElementById('f-health-report-status').innerHTML = student.healthReportUrl ? `<a class="file-link" href="${student.healthReportUrl}" target="_blank" rel="noopener noreferrer">Mevcut sağlık raporunu aç</a>` : 'Henüz dosya seçilmedi.';
-      document.getElementById('f-parent-permission-status').innerHTML = student.parentPermissionUrl ? `<a class="file-link" href="${student.parentPermissionUrl}" target="_blank" rel="noopener noreferrer">Mevcut veli izin belgesini aç</a>` : 'Henüz dosya seçilmedi.';
-      document.getElementById('f-other-document-status').innerHTML = student.otherDocumentUrl ? `<a class="file-link" href="${student.otherDocumentUrl}" target="_blank" rel="noopener noreferrer">Mevcut diğer belgeyi aç</a>` : 'Henüz dosya seçilmedi.';
-
-      document.getElementById('form-main-title').textContent = 'Öğrenci Kaydını Düzenle';
-      document.getElementById('form-main-subtitle').textContent = 'Gerekli alanları güncelleyip kaydediniz.';
-      document.getElementById('submit-btn').textContent = '💾 Güncellemeyi Kaydet';
-      document.getElementById('cancel-edit-btn').style.display = 'inline-flex';
+      document.getElementById('f-health-report-status').innerHTML=student.healthReportUrl?`<a class="file-link" href="${student.healthReportUrl}" target="_blank">Mevcut sağlık raporunu aç</a>`:'Henüz dosya seçilmedi.';
+      document.getElementById('f-parent-permission-status').innerHTML=student.parentPermissionUrl?`<a class="file-link" href="${student.parentPermissionUrl}" target="_blank">Mevcut veli izin belgesini aç</a>`:'Henüz dosya seçilmedi.';
+      document.getElementById('f-other-document-status').innerHTML=student.otherDocumentUrl?`<a class="file-link" href="${student.otherDocumentUrl}" target="_blank">Mevcut diğer belgeyi aç</a>`:'Henüz dosya seçilmedi.';
+      document.getElementById('form-main-title').textContent='Öğrenci Kaydını Düzenle';
+      document.getElementById('form-main-subtitle').textContent='Gerekli alanları güncelleyip kaydediniz.';
+      document.getElementById('submit-btn').textContent='💾 Güncellemeyi Kaydet';
+      document.getElementById('cancel-edit-btn').style.display='inline-flex';
     }
 
-    function calcAge(y,m,d) {
-      if(!y) return '—';
-      const t = new Date();
-      let age = t.getFullYear()-y;
-      if(m&&d&&(t.getMonth()+1<m||(t.getMonth()+1===m&&t.getDate()<d))) age--;
+    function calcAge(y,m,d){
+      if(!y)return'—';const t=new Date();let age=t.getFullYear()-y;
+      if(m&&d&&(t.getMonth()+1<m||(t.getMonth()+1===m&&t.getDate()<d)))age--;
       return age+' yaş';
     }
 
-    function imgSrc(s) {
-      return s.photo || null;
+    function imgSrc(s){return s.photo||null;}
+
+    function avatarCard(s){
+      const src=imgSrc(s),init=`${s.firstName?.[0]||''}${s.lastName?.[0]||''}`.toUpperCase();
+      if(src)return`<img class="card-avatar" src="${src}" alt="" onerror="this.outerHTML='<div class=card-avatar-fb>${init}</div>'">`;
+      return`<div class="card-avatar-fb">${init||'SP'}</div>`;
     }
 
-    function avatarCard(s) {
-      const src = imgSrc(s);
-      const init = `${s.firstName?.[0] || ''}${s.lastName?.[0] || ''}`.toUpperCase();
-      if(src) return `<img class="card-avatar" src="${src}" alt="" onerror="this.outerHTML='<div class=card-avatar-fb>${init}</div>'">`;
-      return `<div class="card-avatar-fb">${init || 'SP'}</div>`;
+    function avatarDetail(s){
+      const src=imgSrc(s),init=`${s.firstName?.[0]||''}${s.lastName?.[0]||''}`.toUpperCase();
+      if(src)return`<img class="detail-avatar" src="${src}" alt="" onerror="this.outerHTML='<div class=detail-avatar-fb>${init}</div>'">`;
+      return`<div class="detail-avatar-fb">${init||'SP'}</div>`;
     }
 
-    function avatarDetail(s) {
-      const src = imgSrc(s);
-      const init = `${s.firstName?.[0] || ''}${s.lastName?.[0] || ''}`.toUpperCase();
-      if(src) return `<img class="detail-avatar" src="${src}" alt="" onerror="this.outerHTML='<div class=detail-avatar-fb>${init}</div>'">`;
-      return `<div class="detail-avatar-fb">${init || 'SP'}</div>`;
-    }
-
-    function renderAdmin() {
-      const wa = students.filter(s=>s.allergy==='Var').length;
-      const wm = students.filter(s=>s.medication==='Var').length;
-      const cats = new Set(students.map(s => s.category).filter(Boolean)).size;
-
-      document.getElementById('stats-row').innerHTML = `
+    function renderAdmin(){
+      const wa=students.filter(s=>s.allergy==='Var').length;
+      const wm=students.filter(s=>s.medication==='Var').length;
+      const cats=new Set(students.map(s=>s.category).filter(Boolean)).size;
+      document.getElementById('stats-row').innerHTML=`
         <div class="stat-card"><div class="stat-num">${students.length}</div><div class="stat-label">Toplam Sporcu</div></div>
         <div class="stat-card"><div class="stat-num" style="color:var(--accent2)">${wa}</div><div class="stat-label">Alerji Kaydı</div></div>
         <div class="stat-card"><div class="stat-num" style="color:#fbbf24">${wm}</div><div class="stat-label">İlaç Kullanan</div></div>
-        <div class="stat-card"><div class="stat-num">${cats}</div><div class="stat-label">Kategori Sayısı</div></div>
-      `;
-
+        <div class="stat-card"><div class="stat-num">${cats}</div><div class="stat-label">Kategori Sayısı</div></div>`;
       renderCards(students);
     }
 
-    function renderCards(list) {
-      const g = document.getElementById('cards-grid');
-
-      if(!list.length) {
-        g.innerHTML = `<div class="empty-state"><div class="eicon">🔍</div><h3>Kayıt Bulunamadı</h3><p>Henüz kayıt eklenmedi veya arama sonucu boş.</p></div>`;
-        return;
-      }
-
-      g.innerHTML = list.map(s => {
-        const badges =
-          (s.category ? `<span class="card-badge">🏷 ${s.category}</span>` : '') +
-          (s.gender ? `<span class="card-badge">${s.gender === 'Kadın' ? '👧 Kadın' : '👦 Erkek'}</span>` : '') +
-          (s.allergy === 'Var' ? `<span class="card-badge red">⚠️ Alerji</span>` : '') +
-          (s.medication === 'Var' ? `<span class="card-badge">💊 İlaç</span>` : '');
-
-        return `
-          <div class="student-card" onclick="openModal('${s.firebaseId}')">
-            <div class="card-top">
-              ${avatarCard(s)}
-              <div class="card-info">
-                <h3>${s.firstName || ''} ${s.lastName || ''}</h3>
-                <div class="card-age">${calcAge(s.birthYear,s.birthMonth,s.birthDay)}</div>
-                <div style="margin-top:6px">${badges}</div>
-              </div>
-            </div>
-            <div class="card-divider"></div>
-            <div class="card-meta">
-              <div class="card-meta-item"><label>TC No</label><span>${s.tcNo || '—'}</span></div>
-              <div class="card-meta-item"><label>Okul</label><span>${s.school||'—'}</span></div>
-              <div class="card-meta-item"><label>Memleket</label><span>${s.birthPlace||'—'}</span></div>
-              <div class="card-meta-item"><label>Kayıt</label><span>${s.registeredAt||'—'}</span></div>
-            </div>
-          </div>
-        `;
+    function renderCards(list){
+      const g=document.getElementById('cards-grid');
+      if(!list.length){g.innerHTML=`<div class="empty-state"><div class="eicon">🔍</div><h3>Kayıt Bulunamadı</h3><p>Henüz kayıt eklenmedi veya arama sonucu boş.</p></div>`;return;}
+      g.innerHTML=list.map(s=>{
+        const badges=(s.category?`<span class="card-badge">🏷 ${s.category}</span>`:'')+
+          (s.gender?`<span class="card-badge">${s.gender==='Kadın'?'👧 Kadın':'👦 Erkek'}</span>`:'')+
+          (s.allergy==='Var'?`<span class="card-badge red">⚠️ Alerji</span>`:'')+
+          (s.medication==='Var'?`<span class="card-badge">💊 İlaç</span>`:'');
+        return`<div class="student-card" onclick="openModal('${s.firebaseId}')">
+          <div class="card-top">${avatarCard(s)}<div class="card-info"><h3>${s.firstName||''} ${s.lastName||''}</h3><div class="card-age">${calcAge(s.birthYear,s.birthMonth,s.birthDay)}</div><div style="margin-top:6px">${badges}</div></div></div>
+          <div class="card-divider"></div>
+          <div class="card-meta">
+            <div class="card-meta-item"><label>TC No</label><span>${s.tcNo||'—'}</span></div>
+            <div class="card-meta-item"><label>Okul</label><span>${s.school||'—'}</span></div>
+            <div class="card-meta-item"><label>Memleket</label><span>${s.birthPlace||'—'}</span></div>
+            <div class="card-meta-item"><label>Kayıt</label><span>${s.registeredAt||'—'}</span></div>
+          </div></div>`;
       }).join('');
     }
 
-    function filterStudents() {
-      const q = document.getElementById('search-input').value.toLowerCase().trim();
-
-      const filtered = students.filter(s =>
-        `${s.firstName || ''} ${s.lastName || ''}`.toLowerCase().includes(q) ||
-        (s.tcNo||'').toLowerCase().includes(q) ||
-        (s.birthPlace||'').toLowerCase().includes(q) ||
-        (s.gender||'').toLowerCase().includes(q) ||
-        (s.parent1||'').toLowerCase().includes(q) ||
-        (s.parent2||'').toLowerCase().includes(q) ||
-        (s.address||'').toLowerCase().includes(q) ||
-        (s.category||'').toLowerCase().includes(q) ||
-        (s.achievements||'').toLowerCase().includes(q) ||
-        (s.school||'').toLowerCase().includes(q) ||
-        (s.classroom||'').toLowerCase().includes(q)
-      );
-
-      renderCards(filtered);
+    function filterStudents(){
+      const q=document.getElementById('search-input').value.toLowerCase().trim();
+      renderCards(students.filter(s=>
+        `${s.firstName||''} ${s.lastName||''}`.toLowerCase().includes(q)||
+        (s.tcNo||'').toLowerCase().includes(q)||(s.birthPlace||'').toLowerCase().includes(q)||
+        (s.gender||'').toLowerCase().includes(q)||(s.parent1||'').toLowerCase().includes(q)||
+        (s.parent2||'').toLowerCase().includes(q)||(s.address||'').toLowerCase().includes(q)||
+        (s.category||'').toLowerCase().includes(q)||(s.achievements||'').toLowerCase().includes(q)||
+        (s.school||'').toLowerCase().includes(q)||(s.classroom||'').toLowerCase().includes(q)
+      ));
     }
 
-    function openModal(firebaseId) {
-      currentStudent = students.find(s => s.firebaseId === firebaseId);
-      if (!currentStudent) return;
-
-      const s = currentStudent;
-      const bd = s.birthDay ? `${s.birthDay} ${MONTHS[s.birthMonth]} ${s.birthYear}` : '—';
-
-      const badges =
-        (s.category ? `<span class="card-badge">🏷 ${s.category}</span>` : '') +
-        (s.gender ? `<span class="card-badge">${s.gender === 'Kadın' ? '👧 Kadın' : '👦 Erkek'}</span>` : '') +
-        (s.allergy==='Var' ? `<span class="card-badge red">⚠️ Alerji Var</span>` : '') +
-        (s.medication==='Var' ? `<span class="card-badge">💊 İlaç Kullanıyor</span>` : '');
-
-      document.getElementById('modal-title').innerHTML = `
+    function openModal(firebaseId){
+      currentStudent=students.find(s=>s.firebaseId===firebaseId);
+      if(!currentStudent)return;
+      const s=currentStudent;
+      const bd=s.birthDay?`${s.birthDay} ${MONTHS[s.birthMonth]} ${s.birthYear}`:'—';
+      const badges=(s.category?`<span class="card-badge">🏷 ${s.category}</span>`:'')+
+        (s.gender?`<span class="card-badge">${s.gender==='Kadın'?'👧 Kadın':'👦 Erkek'}</span>`:'')+
+        (s.allergy==='Var'?`<span class="card-badge red">⚠️ Alerji Var</span>`:'')+
+        (s.medication==='Var'?`<span class="card-badge">💊 İlaç Kullanıyor</span>`:'');
+      document.getElementById('modal-title').innerHTML=`
         <div style="font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px">Sporcu Profili</div>
-        <div style="font-size:1.4rem;font-weight:800">${s.firstName || ''} ${s.lastName || ''}</div>
-      `;
-
-      document.getElementById('modal-body').innerHTML = `
-        <div class="detail-hero">
-          ${avatarDetail(s)}
-          <div class="detail-name">
-            <h2>${s.firstName || ''} ${s.lastName || ''}</h2>
-            <p>${calcAge(s.birthYear,s.birthMonth,s.birthDay)} · ${bd}</p>
-            <div class="badges">${badges}</div>
-          </div>
-        </div>
-
+        <div style="font-size:1.4rem;font-weight:800">${s.firstName||''} ${s.lastName||''}</div>`;
+      document.getElementById('modal-body').innerHTML=`
+        <div class="detail-hero">${avatarDetail(s)}<div class="detail-name"><h2>${s.firstName||''} ${s.lastName||''}</h2><p>${calcAge(s.birthYear,s.birthMonth,s.birthDay)} · ${bd}</p><div class="badges">${badges}</div></div></div>
         <div class="modal-sec">Kişisel Bilgiler</div>
         <div class="detail-grid">
           <div class="detail-field"><label>TC Kimlik No</label><span>${s.tcNo||'—'}</span></div>
@@ -1261,265 +1026,147 @@
           <div class="detail-field"><label>Yaş</label><span>${calcAge(s.birthYear,s.birthMonth,s.birthDay)}</span></div>
           <div class="detail-field full"><label>Kayıt Tarihi</label><span>${s.registeredAt||'—'}</span></div>
         </div>
-
         <div class="modal-sec">Okul Bilgileri</div>
         <div class="detail-grid">
           <div class="detail-field"><label>Okul</label><span>${s.school||'—'}</span></div>
           <div class="detail-field"><label>Sınıf</label><span>${s.classroom||'—'}</span></div>
         </div>
-
         <div class="modal-sec">Fiziksel Bilgiler</div>
         <div class="detail-grid">
-          <div class="detail-field hl"><label>Boy</label><span>${s.height ? s.height + ' cm' : '—'}</span></div>
-          <div class="detail-field hl"><label>Kilo</label><span>${s.weight ? s.weight + ' kg' : '—'}</span></div>
+          <div class="detail-field hl"><label>Boy</label><span>${s.height?s.height+' cm':'—'}</span></div>
+          <div class="detail-field hl"><label>Kilo</label><span>${s.weight?s.weight+' kg':'—'}</span></div>
         </div>
-
         <div class="modal-sec">Sağlık Bilgileri</div>
         <div class="detail-grid">
           <div class="detail-field ${s.medication==='Var'?'warn':''}"><label>İlaç Durumu</label><span>${s.medication||'—'}</span></div>
           <div class="detail-field ${s.allergy==='Var'?'warn':''}"><label>Alerji Durumu</label><span>${s.allergy||'—'}</span></div>
-          ${s.medicationDetail ? `<div class="detail-field full warn"><label>İlaç Detayı</label><span>${s.medicationDetail}</span></div>` : ''}
-          ${s.allergyDetail ? `<div class="detail-field full warn"><label>Alerji Detayı</label><span>${s.allergyDetail}</span></div>` : ''}
+          ${s.medicationDetail?`<div class="detail-field full warn"><label>İlaç Detayı</label><span>${s.medicationDetail}</span></div>`:''}
+          ${s.allergyDetail?`<div class="detail-field full warn"><label>Alerji Detayı</label><span>${s.allergyDetail}</span></div>`:''}
         </div>
-
         <div class="modal-sec">Veli Bilgileri</div>
         <div class="detail-grid">
           <div class="detail-field"><label>1. Veli</label><span>${s.parent1||'—'}</span></div>
           <div class="detail-field"><label>1. Telefon</label><span>${s.phone1||'—'}</span></div>
           <div class="detail-field"><label>2. Veli</label><span>${s.parent2||'—'}</span></div>
           <div class="detail-field"><label>2. Telefon</label><span>${s.phone2||'—'}</span></div>
-          ${s.address ? `<div class="detail-field full"><label>Adres</label><span style="font-family:inherit;font-size:0.9rem;line-height:1.5">${s.address}</span></div>` : ''}
-          ${s.notes ? `<div class="detail-field full"><label>Notlar</label><span style="font-family:inherit;font-size:0.9rem;line-height:1.5">${s.notes}</span></div>` : ''}
+          ${s.address?`<div class="detail-field full"><label>Adres</label><span style="font-family:inherit;font-size:0.9rem;line-height:1.5">${s.address}</span></div>`:''}
+          ${s.notes?`<div class="detail-field full"><label>Notlar</label><span style="font-family:inherit;font-size:0.9rem;line-height:1.5">${s.notes}</span></div>`:''}
         </div>
-
         <div class="modal-sec">Belgeler</div>
         <div class="detail-grid">
-          <div class="detail-field"><label>Sporcu Fotoğrafı</label><span>${s.photo ? `<a class="file-link" href="${s.photo}" target="_blank" rel="noopener noreferrer">Aç</a>` : 'Yok'}</span></div>
-          <div class="detail-field"><label>Sağlık Raporu</label><span>${linkText(s.healthReportUrl, 'Aç')}</span></div>
-          <div class="detail-field"><label>Veli İzin Belgesi</label><span>${linkText(s.parentPermissionUrl, 'Aç')}</span></div>
-          <div class="detail-field"><label>Diğer Belge</label><span>${linkText(s.otherDocumentUrl, 'Aç')}</span></div>
+          <div class="detail-field"><label>Sporcu Fotoğrafı</label><span>${s.photo?`<a class="file-link" href="${s.photo}" target="_blank">Aç</a>`:'Yok'}</span></div>
+          <div class="detail-field"><label>Sağlık Raporu</label><span>${linkText(s.healthReportUrl,'Aç')}</span></div>
+          <div class="detail-field"><label>Veli İzin Belgesi</label><span>${linkText(s.parentPermissionUrl,'Aç')}</span></div>
+          <div class="detail-field"><label>Diğer Belge</label><span>${linkText(s.otherDocumentUrl,'Aç')}</span></div>
         </div>
-
         <div class="modal-sec">Müsabaka ve Başarılar</div>
         <div class="detail-grid">
           <div class="detail-field full"><label>Geçmiş Kayıtlar</label><span style="font-family:inherit;font-size:0.9rem;line-height:1.6;white-space:pre-wrap">${s.achievements||'—'}</span></div>
-        </div>
-      `;
-
+        </div>`;
       document.getElementById('modal-overlay').classList.add('open');
     }
 
-    function closeModal() {
-      document.getElementById('modal-overlay').classList.remove('open');
-      currentStudent = null;
+    function closeModal(){document.getElementById('modal-overlay').classList.remove('open');currentStudent=null;}
+
+    function startEditCurrent(){if(!currentStudent)return;fillForm(currentStudent);closeModal();showScreen('form-screen');}
+
+    async function deleteCurrentStudent(){
+      if(!currentStudent||!currentStudent.firebaseId)return;
+      if(!confirm(`${currentStudent.firstName} ${currentStudent.lastName} kaydını silmek istediğinize emin misiniz?`))return;
+      try{
+        await deleteDoc(doc(db,'students',currentStudent.firebaseId));
+        closeModal();await loadStudents();renderAdmin();showToast('🗑 Kayıt silindi.');
+      }catch(e){console.error(e);showToast('❌ Kayıt silinemedi.');}
     }
 
-    function startEditCurrent() {
-      if (!currentStudent) return;
-      fillForm(currentStudent);
-      closeModal();
-      showScreen('form-screen');
-    }
-
-    async function deleteCurrentStudent() {
-      if (!currentStudent || !currentStudent.firebaseId) return;
-
-      const ok = confirm(`${currentStudent.firstName} ${currentStudent.lastName} kaydını silmek istediğinize emin misiniz?`);
-      if (!ok) return;
-
-      try {
-        await deleteDoc(doc(db, 'students', currentStudent.firebaseId));
-        closeModal();
-        await loadStudents();
-        renderAdmin();
-        showToast('🗑 Kayıt silindi.');
-      } catch (error) {
-        console.error(error);
-        showToast('❌ Kayıt silinemedi.');
-      }
-    }
-
-    function exportExcel() {
-      if (!students.length) {
-        showToast('⚠️ İndirilecek kayıt yok.');
-        return;
-      }
-
-      const rows = students.map((s, i) => ({
-        'Sıra No': i + 1,
-        'Ad': s.firstName || '',
-        'Soyad': s.lastName || '',
-        'TC Kimlik No': s.tcNo || '',
-        'Cinsiyet': s.gender || '',
-        'Kategori': s.category || '',
-        'Okul': s.school || '',
-        'Sınıf': s.classroom || '',
-        'Doğum Günü': s.birthDay || '',
-        'Doğum Ayı': s.birthMonth ? MONTHS[s.birthMonth] : '',
-        'Doğum Yılı': s.birthYear || '',
-        'Doğum Yeri': s.birthPlace || '',
-        'Kan Grubu': s.blood || '',
-        'Boy (cm)': s.height || '',
-        'Kilo (kg)': s.weight || '',
-        'İlaç Durumu': s.medication || '',
-        'İlaç Detayı': s.medicationDetail || '',
-        'Alerji Durumu': s.allergy || '',
-        'Alerji Detayı': s.allergyDetail || '',
-        '1. Veli': s.parent1 || '',
-        '1. Veli Telefon': s.phone1 || '',
-        '2. Veli': s.parent2 || '',
-        '2. Veli Telefon': s.phone2 || '',
-        'Adres': s.address || '',
-        'Ek Notlar': s.notes || '',
-        'Müsabaka ve Başarılar': s.achievements || '',
-        'Sağlık Raporu Linki': s.healthReportUrl || '',
-        'Veli İzin Belgesi Linki': s.parentPermissionUrl || '',
-        'Diğer Belge Linki': s.otherDocumentUrl || '',
-        'Fotoğraf Linki': s.photo || '',
-        'Kayıt Tarihi': s.registeredAt || ''
+    function exportExcel(){
+      if(!students.length){showToast('⚠️ İndirilecek kayıt yok.');return;}
+      const rows=students.map((s,i)=>({
+        'Sıra No':i+1,'Ad':s.firstName||'','Soyad':s.lastName||'','TC Kimlik No':s.tcNo||'',
+        'Cinsiyet':s.gender||'','Kategori':s.category||'','Okul':s.school||'','Sınıf':s.classroom||'',
+        'Doğum Günü':s.birthDay||'','Doğum Ayı':s.birthMonth?MONTHS[s.birthMonth]:'','Doğum Yılı':s.birthYear||'',
+        'Doğum Yeri':s.birthPlace||'','Kan Grubu':s.blood||'','Boy (cm)':s.height||'','Kilo (kg)':s.weight||'',
+        'İlaç Durumu':s.medication||'','İlaç Detayı':s.medicationDetail||'',
+        'Alerji Durumu':s.allergy||'','Alerji Detayı':s.allergyDetail||'',
+        '1. Veli':s.parent1||'','1. Veli Telefon':s.phone1||'','2. Veli':s.parent2||'','2. Veli Telefon':s.phone2||'',
+        'Adres':s.address||'','Ek Notlar':s.notes||'','Müsabaka ve Başarılar':s.achievements||'',
+        'Sağlık Raporu Linki':s.healthReportUrl||'','Veli İzin Belgesi Linki':s.parentPermissionUrl||'',
+        'Diğer Belge Linki':s.otherDocumentUrl||'','Fotoğraf Linki':s.photo||'','Kayıt Tarihi':s.registeredAt||''
       }));
-
-      const ws = XLSX.utils.json_to_sheet(rows);
-      const wb = XLSX.utils.book_new();
-      XLSX.utils.book_append_sheet(wb, ws, 'Sporcular');
-      XLSX.writeFile(wb, 'sporcu_kayitlari.xlsx');
+      const ws=XLSX.utils.json_to_sheet(rows);
+      const wb=XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb,ws,'Sporcular');
+      XLSX.writeFile(wb,'sporcu_kayitlari.xlsx');
     }
 
-    function exportPDF() {
-      if (!currentStudent) return;
-
-      const s = currentStudent;
-      const bd = s.birthDay ? `${s.birthDay} ${MONTHS[s.birthMonth]} ${s.birthYear}` : '—';
-      const avatarSrc = imgSrc(s);
-      const now = new Date().toLocaleString('tr-TR');
-
-      const wrap = document.createElement('div');
-      wrap.id = 'pdf-render-wrap';
-      wrap.style.cssText = `
-        position:fixed; left:-9999px; top:0; width:794px; background:#fff;
-        font-family:'Sora',sans-serif; color:#111; font-size:13px; line-height:1.5;
-      `;
-
-      const field = (label, value, warn=false) => `
-        <div style="background:${warn?'#fff5f0':'#f4fdf9'};border-radius:8px;padding:12px 14px;flex:1;min-width:220px">
-          <div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:${warn?'#c0392b':'#00897b'};margin-bottom:4px">${label}</div>
-          <div style="font-size:13px;font-weight:600;color:${warn?'#c0392b':'#111'}">${value||'—'}</div>
-        </div>`;
-
-      const section = title => `
-        <div style="background:#e8fdf7;border-left:4px solid #00d4aa;padding:8px 14px;margin:20px 0 12px;border-radius:0 6px 6px 0">
-          <span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#00897b">${title}</span>
-        </div>`;
-
-      const avatarHTML = avatarSrc
-        ? `<img src="${avatarSrc}" style="width:80px;height:80px;border-radius:12px;object-fit:cover;border:3px solid #00d4aa" crossorigin="anonymous">`
-        : `<div style="width:80px;height:80px;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#006655);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff">${(s.firstName?.[0]||'')}${(s.lastName?.[0]||'')}</div>`;
-
-      wrap.innerHTML = `
+    function exportPDF(){
+      if(!currentStudent)return;
+      const s=currentStudent;
+      const bd=s.birthDay?`${s.birthDay} ${MONTHS[s.birthMonth]} ${s.birthYear}`:'—';
+      const avatarSrc=imgSrc(s);
+      const now=new Date().toLocaleString('tr-TR');
+      const wrap=document.createElement('div');
+      wrap.style.cssText='position:fixed;left:-9999px;top:0;width:794px;background:#fff;font-family:Sora,sans-serif;color:#111;font-size:13px;line-height:1.5;';
+      const field=(label,value,warn=false)=>`<div style="background:${warn?'#fff5f0':'#f4fdf9'};border-radius:8px;padding:12px 14px;flex:1;min-width:220px"><div style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:${warn?'#c0392b':'#00897b'};margin-bottom:4px">${label}</div><div style="font-size:13px;font-weight:600;color:${warn?'#c0392b':'#111'}">${value||'—'}</div></div>`;
+      const section=title=>`<div style="background:#e8fdf7;border-left:4px solid #00d4aa;padding:8px 14px;margin:20px 0 12px;border-radius:0 6px 6px 0"><span style="font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:1.5px;color:#00897b">${title}</span></div>`;
+      const avatarHTML=avatarSrc?`<img src="${avatarSrc}" style="width:80px;height:80px;border-radius:12px;object-fit:cover;border:3px solid #00d4aa" crossorigin="anonymous">`:`<div style="width:80px;height:80px;border-radius:12px;background:linear-gradient(135deg,#00d4aa,#006655);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff">${s.firstName?.[0]||''}${s.lastName?.[0]||''}</div>`;
+      wrap.innerHTML=`
         <div style="background:#00d4aa;padding:24px 32px;display:flex;align-items:center;justify-content:space-between">
-          <div>
-            <div style="font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:4px">Spor Branş Kayıt Sistemi</div>
-            <div style="font-size:22px;font-weight:800;color:#000;letter-spacing:-0.5px">SPORCU KAYIT FORMU</div>
-            <div style="font-size:13px;font-weight:600;color:rgba(0,0,0,0.7);margin-top:4px">${s.firstName || ''} ${s.lastName || ''}</div>
-          </div>
-          ${avatarHTML}
-        </div>
-
+          <div><div style="font-size:10px;font-weight:700;letter-spacing:2px;color:rgba(0,0,0,0.6);text-transform:uppercase;margin-bottom:4px">Spor Branş Kayıt Sistemi</div>
+          <div style="font-size:22px;font-weight:800;color:#000;letter-spacing:-0.5px">SPORCU KAYIT FORMU</div>
+          <div style="font-size:13px;font-weight:600;color:rgba(0,0,0,0.7);margin-top:4px">${s.firstName||''} ${s.lastName||''}</div></div>${avatarHTML}</div>
         <div style="padding:24px 32px">
-          ${section('Kişisel Bilgiler')}
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            ${field('TC Kimlik No', s.tcNo)}
-            ${field('Cinsiyet', s.gender)}
-            ${field('Kategori', s.category)}
-            ${field('Okul', s.school)}
-            ${field('Sınıf', s.classroom)}
-            ${field('Doğum Tarihi', bd)}
-            ${field('Doğum Yeri', s.birthPlace)}
-            ${field('Kan Grubu', s.blood)}
-          </div>
-
-          ${section('Fiziksel Bilgiler')}
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            ${field('Boy', s.height ? s.height + ' cm' : '—')}
-            ${field('Kilo', s.weight ? s.weight + ' kg' : '—')}
-          </div>
-
-          ${section('Sağlık Bilgileri')}
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            ${field('İlaç Durumu', s.medication, s.medication === 'Var')}
-            ${field('Alerji Durumu', s.allergy, s.allergy === 'Var')}
-          </div>
-          ${s.medicationDetail ? `<div style="margin-top:10px;display:flex;gap:10px">${field('İlaç Detayı', s.medicationDetail, true)}</div>` : ''}
-          ${s.allergyDetail ? `<div style="margin-top:10px;display:flex;gap:10px">${field('Alerji Detayı', s.allergyDetail, true)}</div>` : ''}
-
-          ${section('Veli Bilgileri')}
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            ${field('1. Veli', s.parent1)}
-            ${field('1. Telefon', s.phone1)}
-            ${field('2. Veli', s.parent2)}
-            ${field('2. Telefon', s.phone2)}
-          </div>
-          ${s.address ? `<div style="margin-top:10px">${field('Adres', s.address)}</div>` : ''}
-          ${s.notes ? `<div style="margin-top:10px">${field('Notlar', s.notes)}</div>` : ''}
-
-          ${section('Müsabaka ve Başarılar')}
-          ${field('Kayıtlar', s.achievements || '—')}
+          ${section('Kişisel Bilgiler')}<div style="display:flex;gap:10px;flex-wrap:wrap">${field('TC Kimlik No',s.tcNo)}${field('Cinsiyet',s.gender)}${field('Kategori',s.category)}${field('Okul',s.school)}${field('Sınıf',s.classroom)}${field('Doğum Tarihi',bd)}${field('Doğum Yeri',s.birthPlace)}${field('Kan Grubu',s.blood)}</div>
+          ${section('Fiziksel Bilgiler')}<div style="display:flex;gap:10px;flex-wrap:wrap">${field('Boy',s.height?s.height+' cm':'—')}${field('Kilo',s.weight?s.weight+' kg':'—')}</div>
+          ${section('Sağlık Bilgileri')}<div style="display:flex;gap:10px;flex-wrap:wrap">${field('İlaç Durumu',s.medication,s.medication==='Var')}${field('Alerji Durumu',s.allergy,s.allergy==='Var')}</div>
+          ${s.medicationDetail?`<div style="margin-top:10px;display:flex;gap:10px">${field('İlaç Detayı',s.medicationDetail,true)}</div>`:''}
+          ${s.allergyDetail?`<div style="margin-top:10px;display:flex;gap:10px">${field('Alerji Detayı',s.allergyDetail,true)}</div>`:''}
+          ${section('Veli Bilgileri')}<div style="display:flex;gap:10px;flex-wrap:wrap">${field('1. Veli',s.parent1)}${field('1. Telefon',s.phone1)}${field('2. Veli',s.parent2)}${field('2. Telefon',s.phone2)}</div>
+          ${s.address?`<div style="margin-top:10px">${field('Adres',s.address)}</div>`:''}
+          ${s.notes?`<div style="margin-top:10px">${field('Notlar',s.notes)}</div>`:''}
+          ${section('Müsabaka ve Başarılar')}${field('Kayıtlar',s.achievements||'—')}
         </div>
-
         <div style="background:#f5f5f5;padding:12px 32px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid #e0e0e0;font-size:9px;color:#999">
-          <span>Spor Branş Kayıt Sistemi</span>
-          <span>Kayıt: ${s.registeredAt || '-'} | Oluşturulma: ${now}</span>
-        </div>
-      `;
-
+          <span>Spor Branş Kayıt Sistemi</span><span>Kayıt: ${s.registeredAt||'-'} | Oluşturulma: ${now}</span>
+        </div>`;
       document.body.appendChild(wrap);
       showToast('⏳ PDF hazırlanıyor...');
-
-      setTimeout(() => {
-        html2canvas(wrap, { scale: 2, useCORS: true, allowTaint: true, backgroundColor: '#ffffff', width: 794, windowWidth: 794 })
-          .then(canvas => {
-            const { jsPDF } = window.jspdf;
-            const doc = new jsPDF({ unit:'mm', format:'a4', orientation:'portrait' });
-            const imgData = canvas.toDataURL('image/jpeg', 0.95);
-            const pdfW = 210;
-            const pdfH = Math.min(297, (canvas.height * pdfW) / canvas.width);
-            doc.addImage(imgData, 'JPEG', 0, 0, pdfW, pdfH);
-            doc.save(`${s.firstName || 'sporcu'}_${s.lastName || ''}_sporcu.pdf`);
-            document.body.removeChild(wrap);
-            showToast('📄 PDF indirildi!');
+      setTimeout(()=>{
+        html2canvas(wrap,{scale:2,useCORS:true,allowTaint:true,backgroundColor:'#ffffff',width:794,windowWidth:794})
+          .then(canvas=>{
+            const{jsPDF}=window.jspdf;
+            const d=new jsPDF({unit:'mm',format:'a4',orientation:'portrait'});
+            const imgData=canvas.toDataURL('image/jpeg',0.95);
+            const pdfW=210,pdfH=Math.min(297,(canvas.height*pdfW)/canvas.width);
+            d.addImage(imgData,'JPEG',0,0,pdfW,pdfH);
+            d.save(`${s.firstName||'sporcu'}_${s.lastName||''}_sporcu.pdf`);
+            document.body.removeChild(wrap);showToast('📄 PDF indirildi!');
           })
-          .catch(err => {
-            document.body.removeChild(wrap);
-            showToast('❌ PDF oluşturulamadı.');
-            console.error(err);
-          });
-      }, 300);
+          .catch(err=>{document.body.removeChild(wrap);showToast('❌ PDF oluşturulamadı.');console.error(err);});
+      },300);
     }
 
-    function showToast(msg) {
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 3200);
+    function showToast(msg){
+      const t=document.getElementById('toast');
+      t.textContent=msg;t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'),3200);
     }
 
-    window.showScreen = showScreen;
-    window.goAdmin = goAdmin;
-    window.checkLogin = checkLogin;
-    window.logoutAdmin = logoutAdmin;
-    window.submitForm = submitForm;
-    window.filterStudents = filterStudents;
-    window.openModal = openModal;
-    window.closeModal = closeModal;
-    window.exportPDF = exportPDF;
-    window.exportExcel = exportExcel;
-    window.startEditCurrent = startEditCurrent;
-    window.deleteCurrentStudent = deleteCurrentStudent;
-    window.cancelEdit = cancelEdit;
-    window.prepareNewRecord = prepareNewRecord;
+    window.showScreen=showScreen;window.goAdmin=goAdmin;window.checkLogin=checkLogin;
+    window.logoutAdmin=logoutAdmin;window.submitForm=submitForm;window.filterStudents=filterStudents;
+    window.openModal=openModal;window.closeModal=closeModal;window.exportPDF=exportPDF;
+    window.exportExcel=exportExcel;window.startEditCurrent=startEditCurrent;
+    window.deleteCurrentStudent=deleteCurrentStudent;window.cancelEdit=cancelEdit;
+    window.prepareNewRecord=prepareNewRecord;
 
     populateSelects();
     toggleConditionalFields();
+
+    // Sayfa yenilenince oturum devam eder
+    if(checkSession()){
+      isAdminLoggedIn=true;
+      loadStudents().then(()=>{renderAdmin();showScreen('admin-screen');});
+    }
   </script>
 </body>
 </html>
