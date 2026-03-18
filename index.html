@@ -640,18 +640,24 @@
       btn.disabled = true;
 
       try {
+        // Girilen şifreyi SHA-256 ile hashle
+        const msgBuffer = new TextEncoder().encode(entered);
+        const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashedInput = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+
         const configSnap = await getDoc(doc(db, 'config', 'admin'));
 
         if (!configSnap.exists()) {
-          showToast('❌ Yapılandırma bulunamadı. Firebase\'de config/admin belgesi yok.');
+          showToast('❌ Yapılandırma bulunamadı.');
           btn.textContent = 'Giriş Yap →';
           btn.disabled = false;
           return;
         }
 
-        const correctPassword = configSnap.data().password;
+        const correctHash = configSnap.data().password;
 
-        if (entered === correctPassword) {
+        if (hashedInput === correctHash) {
           isAdminLoggedIn = true;
           sessionStorage.setItem('adminLoggedIn', 'true');
           document.getElementById('admin-pass').value = '';
