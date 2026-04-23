@@ -629,7 +629,6 @@
       return sessionStorage.getItem('adminLoggedIn') === 'true';
     }
 
-    // ── Giriş: şifreyi Firestore'dan çekip karşılaştırır ────────────
     async function checkLogin() {
       const entered = document.getElementById('admin-pass').value;
       const errEl = document.getElementById('login-error');
@@ -640,7 +639,6 @@
       btn.disabled = true;
 
       try {
-        // Girilen şifreyi SHA-256 ile hashle
         const msgBuffer = new TextEncoder().encode(entered);
         const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
         const hashArray = Array.from(new Uint8Array(hashBuffer));
@@ -763,46 +761,76 @@
       reader.readAsDataURL(file);
     }
 
-    async function compressImage(file,maxWidth=1400,quality=0.78) {
-      return new Promise((resolve,reject)=>{
-        if(!file.type.startsWith('image/')){ reject(new Error('Geçerli bir görsel seçilmedi.')); return; }
-        const reader=new FileReader();
-        reader.onload=ev=>{
-          const img=new Image();
-          img.onload=()=>{
-            let w=img.width,h=img.height;
-            if(w>maxWidth){h=Math.round(h*maxWidth/w);w=maxWidth;}
-            const canvas=document.createElement('canvas');
-            canvas.width=w;canvas.height=h;
-            canvas.getContext('2d').drawImage(img,0,0,w,h);
-            canvas.toBlob(blob=>{
-              if(!blob){reject(new Error('Fotoğraf sıkıştırılamadı.'));return;}
-              resolve(new File([blob],file.name.replace(/\.[^.]+$/,'.jpg'),{type:'image/jpeg'}));
-            },'image/jpeg',quality);
+    // ── DÜZELTİLDİ: compressImage - canvas.toBlob hatası yönetimi ─────────
+    async function compressImage(file, maxWidth=1400, quality=0.78) {
+      return new Promise((resolve, reject) => {
+        if (!file || !file.type.startsWith('image/')) {
+          reject(new Error('Geçerli bir görsel seçilmedi.')); return;
+        }
+        const reader = new FileReader();
+        reader.onload = ev => {
+          const img = new Image();
+          img.onload = () => {
+            try {
+              let w = img.width, h = img.height;
+              if (w > maxWidth) { h = Math.round(h * maxWidth / w); w = maxWidth; }
+              const canvas = document.createElement('canvas');
+              canvas.width = w; canvas.height = h;
+              const ctx = canvas.getContext('2d');
+              if (!ctx) { resolve(file); return; } // canvas desteklenmiyorsa orijinali kullan
+              ctx.drawImage(img, 0, 0, w, h);
+              canvas.toBlob(blob => {
+                if (!blob) {
+                  // toBlob null dönerse orijinal dosyayı kullan, işlemi durdurma
+                  console.warn('canvas.toBlob null döndü, orijinal dosya kullanılıyor.');
+                  resolve(file);
+                  return;
+                }
+                resolve(new File([blob], file.name.replace(/\.[^.]+$/, '.jpg'), { type: 'image/jpeg' }));
+              }, 'image/jpeg', quality);
+            } catch (err) {
+              console.warn('Sıkıştırma hatası, orijinal dosya kullanılıyor:', err);
+              resolve(file); // hata olursa da orijinali kullan
+            }
           };
-          img.onerror=()=>reject(new Error('Fotoğraf okunamadı.'));
-          img.src=ev.target.result;
+          img.onerror = () => reject(new Error('Fotoğraf açılamadı. Lütfen farklı bir dosya deneyin.'));
+          img.src = ev.target.result;
         };
-        reader.onerror=()=>reject(new Error('Dosya okunamadı.'));
+        reader.onerror = () => reject(new Error('Dosya okunamadı.'));
         reader.readAsDataURL(file);
       });
     }
 
-    async function uploadFileIfNeeded(inputId,folder,fallbackUrl='') {
-      const input=document.getElementById(inputId);
-      if(!input) return fallbackUrl||'';
-      const file=input.files&&input.files[0];
-      if(!file) return fallbackUrl||'';
-      let uploadFile=file;
-      if(inputId==='photo-input') uploadFile=await compressImage(file,1400,0.78);
-      const safeName=`${Date.now()}_${uploadFile.name.replace(/[^a-zA-Z0-9._-]/g,'_')}`;
-      try{
-        const fileRef=ref(storage,`${folder}/${safeName}`);
-        await uploadBytes(fileRef,uploadFile);
+    // ── DÜZELTİLDİ: uploadFileIfNeeded - net hata mesajları ──────────────
+    async function uploadFileIfNeeded(inputId, folder, fallbackUrl='') {
+      const input = document.getElementById(inputId);
+      if (!input) return fallbackUrl || '';
+      const file = input.files && input.files[0];
+      if (!file) return fallbackUrl || '';
+
+      let uploadFile = file;
+      // Sadece görsel dosyaları sıkıştır
+      if (file.type.startsWith('image/')) {
+        try {
+          uploadFile = await compressImage(file, 1400, 0.78);
+        } catch (compErr) {
+          console.warn('Sıkıştırma atlandı, orijinal yükleniyor:', compErr);
+          uploadFile = file; // sıkıştırma hata verse orijinali yükle
+        }
+      }
+
+      const safeName = `${Date.now()}_${(uploadFile.name || 'file').replace(/[^a-zA-Z0-9._-]/g, '_')}`;
+      try {
+        const fileRef = ref(storage, `${folder}/${safeName}`);
+        await uploadBytes(fileRef, uploadFile);
         return await getDownloadURL(fileRef);
-      }catch(e){
-        console.error(e);
-        throw new Error(`${inputId} yüklenemedi: ${e.code||e.message}`);
+      } catch (e) {
+        console.error('Upload error:', e);
+        const label = inputId === 'photo-input' ? 'Fotoğraf'
+          : inputId === 'f-health-report' ? 'Sağlık raporu'
+          : inputId === 'f-parent-permission' ? 'Veli izin belgesi'
+          : 'Belge';
+        throw new Error(`${label} yüklenemedi. Dosyanın 10MB altında olduğunu ve internet bağlantınızın aktif olduğunu kontrol edin. (${e.code || e.message})`);
       }
     }
 
@@ -1076,13 +1104,25 @@
 
     function startEditCurrent(){if(!currentStudent)return;fillForm(currentStudent);closeModal();showScreen('form-screen');}
 
-    async function deleteCurrentStudent(){
-      if(!currentStudent||!currentStudent.firebaseId)return;
-      if(!confirm(`${currentStudent.firstName} ${currentStudent.lastName} kaydını silmek istediğinize emin misiniz?`))return;
-      try{
-        await deleteDoc(doc(db,'students',currentStudent.firebaseId));
-        closeModal();await loadStudents();renderAdmin();showToast('🗑 Kayıt silindi.');
-      }catch(e){console.error(e);showToast('❌ Kayıt silinemedi.');}
+    // ── DÜZELTİLDİ: deleteCurrentStudent - firebaseId önceden saklanıyor ──
+    async function deleteCurrentStudent() {
+      if (!currentStudent || !currentStudent.firebaseId) return;
+      if (!confirm(`${currentStudent.firstName} ${currentStudent.lastName} kaydını silmek istediğinize emin misiniz?`)) return;
+
+      // ÖNEMLİ: firebaseId'yi closeModal çağrılmadan önce değişkene al
+      // closeModal() currentStudent'ı null yapıyor; silme işlemi için ID'yi saklıyoruz
+      const idToDelete = currentStudent.firebaseId;
+
+      try {
+        await deleteDoc(doc(db, 'students', idToDelete));
+        closeModal();
+        await loadStudents();
+        renderAdmin();
+        showToast('🗑 Kayıt silindi.');
+      } catch (e) {
+        console.error(e);
+        showToast('❌ Kayıt silinemedi: ' + (e.message || e.code || 'Bilinmeyen hata'));
+      }
     }
 
     function exportExcel(){
@@ -1168,7 +1208,6 @@
     populateSelects();
     toggleConditionalFields();
 
-    // Sayfa yenilenince oturum devam eder
     if(checkSession()){
       isAdminLoggedIn=true;
       loadStudents().then(()=>{renderAdmin();showScreen('admin-screen');});
